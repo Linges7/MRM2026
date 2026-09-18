@@ -495,6 +495,14 @@
 
     function toggleFlagForm() { document.getElementById('flag-form-container').classList.toggle('hidden'); }
 
+    const FEEDBACK_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdAMOKYcC6FVtyX8OixiCYpha8GZbe4RXrm2syecm-JUsk2pA/formResponse";
+    const FEEDBACK_FORM_ENTRIES = {
+      user_name: "entry.2025341115",
+      question_text: "entry.1047699245",
+      provided_answer: "entry.60586117",
+      user_review: "entry.1411587752"
+    };
+
     function submitQuestionFlag() {
       const q = activeQuestions[currentQ];
       const reviewText = document.getElementById('flag-review-text').value.trim();
@@ -506,7 +514,15 @@
       localStorage.setItem('question_flags', JSON.stringify(flags));
       updateFlagsButton();
 
-      document.getElementById('flag-status-msg').innerText = "✓ Saved locally!";
+      const formData = new FormData();
+      formData.append(FEEDBACK_FORM_ENTRIES.user_name, flag.user_name);
+      formData.append(FEEDBACK_FORM_ENTRIES.question_text, flag.question_text);
+      formData.append(FEEDBACK_FORM_ENTRIES.provided_answer, flag.provided_answer);
+      formData.append(FEEDBACK_FORM_ENTRIES.user_review, flag.user_review);
+
+      fetch(FEEDBACK_FORM_ACTION, { method: "POST", mode: "no-cors", body: formData })
+        .then(() => { document.getElementById('flag-status-msg').innerText = "✓ Submitted!"; })
+        .catch(() => { document.getElementById('flag-status-msg').innerText = "✓ Saved locally (submission failed, will retry export)."; });
     }
 
     function updateFlagsButton() {
