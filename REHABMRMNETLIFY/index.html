@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rehab & Medicine Board Review</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 15px; }
+    
+    .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 850px; text-align: center; position: relative; }
+    
+    /* General Buttons */
+    .btn { background: #4F46E5; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-size: 1rem; width: 100%; margin-top: 10px; transition: 0.2s; font-weight: 600; }
+    .btn:hover { background: #4338CA; }
+    .btn-emerald { background: #10B981; }
+    .btn-emerald:hover { background: #059669; }
+    .btn-purple { background: #8B5CF6; }
+    .btn-purple:hover { background: #7C3AED; }
+    .btn-secondary { background: #6B7280; }
+    .btn-secondary:hover { background: #4B5563; }
+    .btn-warning { background: #F59E0B; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; margin-top: 10px; }
+    .btn-back { background: transparent; color: #6B7280; border: 1px solid #D1D5DB; padding: 8px 15px; margin-bottom: 15px; width: auto; float: left; cursor: pointer; border-radius: 6px;}
+    .btn-back:hover { background: #F3F4F6; color: #374151; }
+    
+    .hidden { display: none !important; }
+    .clearfix::after { content: ""; clear: both; display: table; }
+
+    /* Forms & Misc */
+    .setting-group { margin: 15px 0; text-align: left; background: #F9FAFB; padding: 12px; border-radius: 8px; border: 1px solid #E5E7EB; }
+    .setting-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #374151; }
+    select, textarea, input[type="text"], input[type="search"] { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #D1D5DB; font-size: 0.95rem; box-sizing: border-box; }
+    textarea { resize: vertical; min-height: 70px; margin-top: 5px; }
+    .checkbox-label { display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal !important; }
+    
+    /* Definitions (Reverted to classic list style) */
+    .definition-item { background: #FFFFFF; padding: 20px; border-radius: 8px; border: 1px solid #E5E7EB; margin-bottom: 15px; text-align: left; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+    .definition-item strong { color: #111827; display: block; font-size: 1.25rem; margin-bottom: 8px; }
+    .definition-item p { color: #374151; font-size: 1.1rem; margin: 0; line-height: 1.6; }
+
+    /* MCQ specific */
+    .option-btn { background: #F3F4F6; color: #1F2937; text-align: left; margin: 8px 0; font-weight: 500; cursor: pointer; padding: 15px; border: none; border-radius: 6px; width: 100%; font-size: 1.15rem; line-height: 1.4; }
+    .option-btn:hover { background: #E5E7EB; }
+    .correct { background: #10B981 !important; color: white !important; }
+    .wrong { background: #EF4444 !important; color: white !important; }
+    .explanation-box { background: #EFF6FF; border-left: 4px solid #3B82F6; padding: 15px; margin-top: 15px; text-align: left; font-size: 1.1rem; border-radius: 4px; line-height: 1.5; }
+    .flag-form-box { background: #FFFBEB; border: 1px solid #FCD34D; padding: 12px; border-radius: 6px; margin-top: 12px; text-align: left; font-size: 1rem;}
+    .score-summary { background: #F3F4F6; padding: 15px; border-radius: 8px; margin: 15px 0; font-size: 1.1rem; }
+
+    /* Interactive Anatomy Dashboard */
+    .anatomy-dashboard { display: flex; justify-content: space-between; align-items: center; background: #F3F4F6; padding: 10px; border-radius: 8px; margin-bottom: 20px; }
+    .anat-stats { display: flex; gap: 15px; background: #E5E7EB; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; color: #374151; text-align: center; }
+    .anat-stat-box span { display: block; font-size: 1.2rem; color: #111827; }
+    .anat-target { flex: 1; background: #FEF08A; padding: 10px; margin: 0 15px; border-radius: 6px; font-size: 1.1rem; font-weight: bold; color: #854D0E; box-shadow: inset 0 0 5px rgba(0,0,0,0.05); }
+    .anat-quit { background: #EF4444; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    .anat-quit:hover { background: #DC2626; }
+    
+    /* Anatomy Hotspots */
+    .anatomy-wrapper { position: relative; display: inline-block; max-width: 100%; margin-top: 5px; }
+    .anatomy-img { width: 100%; height: auto; border-radius: 8px; display: block; }
+    
+    .hotspot-pin { 
+      position: absolute; width: 12px; height: 12px; background-color: #3B82F6; 
+      border: 1.5px solid white; border-radius: 50%; transform: translate(-50%, -50%); 
+      cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.4); transition: 0.2s;
+    }
+    .hotspot-pin:hover { transform: translate(-50%, -50%) scale(1.5); }
+    .pin-correct { background-color: #10B981 !important; border-color: white !important; pointer-events: none; }
+    .pin-wrong { background-color: #EF4444 !important; border-color: white !important; animation: shake 0.4s; }
+
+    @keyframes shake { 0% { transform: translate(-50%, -50%) translateX(-3px); } 50% { transform: translate(-50%, -50%) translateX(3px); } 100% { transform: translate(-50%, -50%) translateX(0); } }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <form name="question-flags" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="user_name" />
+      <input type="text" name="question_text" />
+      <input type="text" name="provided_answer" />
+      <textarea name="user_review"></textarea>
+    </form>
+
+    <!-- SCREEN 1: Main Homepage -->
+    <div id="home-screen">
+      <h1 style="margin-top: 0; margin-bottom: 10px;">Rehab & Medicine Hub 🩺</h1>
+      <p style="color: #6B7280; margin-bottom: 20px;">Select a study mode to begin your session.</p>
+
+      <button class="btn" onclick="showScreen('mcq-setup-screen')" style="padding: 16px; font-size: 1.1rem;">📝 Practice MCQs</button>
+      <button class="btn btn-emerald" onclick="showScreen('definitions-screen')" style="padding: 16px; font-size: 1.1rem;">📚 Study Definitions</button>
+      <button class="btn btn-purple" onclick="startAnatomyMode()" style="padding: 16px; font-size: 1.1rem;">📍 Interactive Anatomy</button>
+      
+      <!-- Database Connection Status Tracker -->
+      <div style="margin-top: 25px; text-align: left; background: #F9FAFB; padding: 15px; border-radius: 8px; border: 1px solid #E5E7EB; font-size: 0.9rem;">
+        <strong style="color: #374151;">📊 QBank Connection Status:</strong>
+        <div id="status-qmain" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions.js (Missing or Error)</div>
+        <div id="status-q01" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions_01.js (Missing or Error)</div>
+        <div id="status-q02" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions_02.js (Missing or Error)</div>
+        <div style="margin-top: 10px; font-weight: bold; color: #111827; border-top: 1px solid #E5E7EB; padding-top: 10px;">Total Questions Loaded: <span id="total-q-count" style="color: #4F46E5;">0</span></div>
+      </div>
+
+      <div style="margin-top: 25px; text-align: left; font-size: 8pt; color: #9CA3AF; font-weight: 500;">
+        Made By L&L, MRM2026
+      </div>
+    </div>
+
+    <!-- SCREEN 2: MCQ Settings -->
+    <div id="mcq-setup-screen" class="hidden clearfix">
+      <button class="btn-back" onclick="showScreen('home-screen')">🔙 Back to Home</button>
+      <div style="clear: both;"></div>
+
+      <h2 style="margin-top: 0;">MCQ Settings</h2>
+      <div class="setting-group">
+        <label for="user-name-input">Your Name / Nickname:</label>
+        <input type="text" id="user-name-input" placeholder="Enter your name (optional)" />
+      </div>
+      <div class="setting-group">
+        <label for="question-count">Number of Questions:</label>
+        <select id="question-count">
+          <option value="5">5 Questions</option>
+          <option value="20" selected>20 Questions</option>
+          <option value="50">50 Questions</option>
+          <option value="100">100 Questions</option>
+        </select>
+      </div>
+      <div class="setting-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="unanswered-only">
+          Only include questions not answered before
+        </label>
+        <small style="color: #6B7280; display: block; margin-top: 4px;" id="unanswered-count-text"></small>
+      </div>
+      <button class="btn" onclick="startQuiz()">Start Practice ➔</button>
+      <button class="btn btn-secondary" onclick="resetAnswerHistory()" style="margin-top: 10px; font-size: 0.85rem;">Reset Answered History</button>
+    </div>
+
+    <!-- SCREEN 3: Definitions Hub -->
+    <div id="definitions-screen" class="hidden clearfix">
+      <button class="btn-back" onclick="showScreen('home-screen')">🔙 Back to Home</button>
+      <div style="clear: both;"></div>
+      <h2 style="margin-top: 0;">Medical Definitions</h2>
+      <input type="search" id="def-search" placeholder="Search definitions..." onkeyup="filterDefinitions()" style="margin-bottom: 15px;" />
+      <div id="definitions-list"></div>
+    </div>
+
+    <!-- SCREEN 4: Active MCQ Quiz -->
+    <div id="quiz-screen" class="hidden clearfix">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <button class="btn-back" style="margin: 0;" onclick="location.reload()">Abort Quiz</button>
+        <div style="font-size: 0.85rem; color: #6B7280; font-weight: 600;" id="progress-text"></div>
+      </div>
+      <div id="question-image-container" class="image-container hidden">
+        <img id="question-image" src="" alt="Clinical Image" style="max-width: 100%; border-radius: 8px;">
+      </div>
+      <h3 id="question-text" style="text-align: left; margin-top: 5px; font-size: 1.4rem; line-height: 1.5; color: #111827;"></h3>
+      <div id="options-container"></div>
+      <div id="explanation" class="explanation-box hidden">
+        <strong>Explanation:</strong>
+        <p id="explanation-text"></p>
+        <button class="btn-warning" id="toggle-flag-btn" onclick="toggleFlagForm()">⚠️ Report / Review Question</button>
+        <div id="flag-form-container" class="flag-form-box hidden">
+          <label style="font-size: 0.85rem; font-weight: 600; color: #92400E;">Describe the issue/doubt:</label>
+          <textarea id="flag-review-text" placeholder="e.g., Option B seems wrong..."></textarea>
+          <button class="btn" style="background: #D97706; margin-top: 5px;" onclick="submitQuestionFlag()">Submit Review to Team</button>
+          <span id="flag-status-msg" style="display: block; font-size: 0.85rem; margin-top: 5px; color: #059669; font-weight: 600;"></span>
+        </div>
+        <button class="btn" style="margin-top: 15px;" onclick="nextQuestion()">Next Question ➔</button>
+      </div>
+    </div>
+
+    <!-- SCREEN 5: Interactive Anatomy Lab -->
+    <div id="anatomy-screen" class="hidden">
+      
+      <div class="setting-group" style="margin-top: 0; padding: 8px;">
+        <select id="anatomy-selector" onchange="loadAnatomyDiagram()" style="font-weight: bold; font-size: 1rem; border: none; background: transparent; cursor: pointer;">
+          <!-- Options loaded via JS -->
+        </select>
+      </div>
+
+      <div class="anatomy-dashboard">
+        <div class="anat-stats">
+          <div class="anat-stat-box">Rem<span id="anat-remain">0</span></div>
+          <div class="anat-stat-box" style="color: #10B981;">Correct<span id="anat-correct">0</span></div>
+          <div class="anat-stat-box" style="color: #EF4444;">Wrong<span id="anat-wrong">0</span></div>
+        </div>
+        <div class="anat-target" id="anatomy-target-name">Select a diagram...</div>
+        <button class="anat-quit" onclick="location.reload()">Quit</button>
+      </div>
+
+      <div id="anatomy-container" class="anatomy-wrapper">
+        <img id="anatomy-image" class="anatomy-img" src="" alt="Diagram">
+        <div id="pins-container"></div>
+      </div>
+      
+      <div id="anatomy-success-msg" class="hidden" style="margin-top: 15px; color: #10B981; font-weight: bold; font-size: 1.3rem;">
+        🎉 Diagram Completed!
+      </div>
+    </div>
+
+    <!-- SCREEN 6: Final Score Summary -->
+    <div id="result-screen" class="hidden">
+      <h1>Session Completed! 🎉</h1>
+      <div class="score-summary">
+        <p id="score-text" style="font-weight: bold; font-size: 1.3rem; margin: 5px 0;"></p>
+        <p id="percentage-text" style="color: #4F46E5; font-weight: 600; margin: 5px 0;"></p>
+        <p id="breakdown-text" style="font-size: 0.95rem; color: #4B5563; margin: 5px 0;"></p>
+      </div>
+      <button class="btn" onclick="location.reload()">Return to Homepage</button>
+    </div>
+  </div>
+
+  <!-- Load ALL External Data Files -->
+  <script src="questions.js"></script>
+  <script src="questions_01.js"></script>
+  <script src="questions_02.js"></script>
+  
+  <script src="definitions.js"></script>
+  <script src="anatomy.js"></script>
+
+  <script>
+    // --- MERGE MULTIPLE QBANK FILES & DIAGNOSTICS ---
+    const questionsBank = [];
+    
+    // Check main file
+    if (typeof qMain !== 'undefined') { 
+      questionsBank.push(...qMain); 
+      document.getElementById('status-qmain').innerHTML = `🟢 questions.js loaded successfully (${qMain.length} Qs)`;
+      document.getElementById('status-qmain').style.color = '#10B981';
+    }
+    // Check batch 01
+    if (typeof q01 !== 'undefined') { 
+      questionsBank.push(...q01); 
+      document.getElementById('status-q01').innerHTML = `🟢 questions_01.js loaded successfully (${q01.length} Qs)`;
+      document.getElementById('status-q01').style.color = '#10B981';
+    }
+    // Check batch 02
+    if (typeof q02 !== 'undefined') { 
+      questionsBank.push(...q02); 
+      document.getElementById('status-q02').innerHTML = `🟢 questions_02.js loaded successfully (${q02.length} Qs)`;
+      document.getElementById('status-q02').style.color = '#10B981';
+    }
+
+    // Update total counter on dashboard
+    document.getElementById('total-q-count').innerText = questionsBank.length;
+
+    function showScreen(screenId) {
+      const screens = ['home-screen', 'mcq-setup-screen', 'definitions-screen', 'quiz-screen', 'anatomy-screen', 'result-screen'];
+      screens.forEach(id => document.getElementById(id).classList.add('hidden'));
+      document.getElementById(screenId).classList.remove('hidden');
+    }
+
+    // --- DEFINITIONS LOGIC (Reverted to standard list) ---
+    function loadDefinitions() {
+      const listContainer = document.getElementById('definitions-list');
+      listContainer.innerHTML = '';
+      if (typeof definitionsBank !== 'undefined') {
+        definitionsBank.forEach(def => {
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'definition-item';
+          itemDiv.innerHTML = `<strong>${def.term}</strong><p>${def.definition}</p>`;
+          listContainer.appendChild(itemDiv);
+        });
+      }
+    }
+    function filterDefinitions() {
+      const input = document.getElementById('def-search').value.toLowerCase();
+      document.querySelectorAll('.definition-item').forEach(item => {
+        item.style.display = item.innerText.toLowerCase().includes(input) ? 'block' : 'none';
+      });
+    }
+
+    // --- ANATOMY LOGIC ---
+    let activeAnatomy = null;
+    let anatomyTargets = [];
+    let currentTarget = null;
+    
+    let anatRemaining = 0;
+    let anatCorrect = 0;
+    let anatWrong = 0;
+
+    function startAnatomyMode() {
+      showScreen('anatomy-screen');
+      const selector = document.getElementById('anatomy-selector');
+      selector.innerHTML = '';
+      if (typeof anatomyBank !== 'undefined' && anatomyBank.length > 0) {
+        anatomyBank.forEach((item, index) => {
+          selector.options.add(new Option(item.title, index));
+        });
+        loadAnatomyDiagram();
+      } else {
+        selector.options.add(new Option("No Anatomy Data Found", 0));
+        document.getElementById('anatomy-target-name').innerText = "Missing anatomy.js";
+      }
+    }
+
+    function loadAnatomyDiagram() {
+      const selectedIndex = document.getElementById('anatomy-selector').value;
+      if (!anatomyBank || anatomyBank.length === 0) return;
+      
+      activeAnatomy = anatomyBank[selectedIndex];
+      document.getElementById('anatomy-image').src = activeAnatomy.image_url;
+      document.getElementById('anatomy-success-msg').classList.add('hidden');
+      
+      anatomyTargets = [...activeAnatomy.hotspots];
+      anatRemaining = anatomyTargets.length;
+      anatCorrect = 0;
+      anatWrong = 0;
+      
+      updateAnatomyStatsUI();
+      
+      const pinsContainer = document.getElementById('pins-container');
+      pinsContainer.innerHTML = '';
+      activeAnatomy.hotspots.forEach(spot => {
+        const pin = document.createElement('div');
+        pin.className = 'hotspot-pin';
+        pin.style.top = spot.top;
+        pin.style.left = spot.left;
+        pin.id = `pin-${spot.id}`;
+        pin.onclick = () => handlePinClick(spot, pin);
+        pinsContainer.appendChild(pin);
+      });
+
+      pickNextAnatomyTarget();
+    }
+
+    function pickNextAnatomyTarget() {
+      if (anatomyTargets.length === 0) {
+        document.getElementById('anatomy-target-name').innerText = "All parts identified!";
+        document.getElementById('anatomy-success-msg').classList.remove('hidden');
+        confetti({ particleCount: 150, spread: 90 });
+        return;
+      }
+      const randomIndex = Math.floor(Math.random() * anatomyTargets.length);
+      currentTarget = anatomyTargets[randomIndex];
+      document.getElementById('anatomy-target-name').innerText = currentTarget.label;
+    }
+
+    function handlePinClick(spot, pinElement) {
+      if (!currentTarget) return;
+
+      if (spot.id === currentTarget.id) {
+        pinElement.classList.add('pin-correct');
+        anatCorrect++;
+        anatRemaining--;
+        updateAnatomyStatsUI();
+        anatomyTargets = anatomyTargets.filter(t => t.id !== spot.id);
+        pickNextAnatomyTarget();
+      } else {
+        pinElement.classList.add('pin-wrong');
+        anatWrong++;
+        updateAnatomyStatsUI();
+        setTimeout(() => pinElement.classList.remove('pin-wrong'), 400);
+      }
+    }
+
+    function updateAnatomyStatsUI() {
+      document.getElementById('anat-remain').innerText = anatRemaining;
+      document.getElementById('anat-correct').innerText = anatCorrect;
+      document.getElementById('anat-wrong').innerText = anatWrong;
+    }
+
+    // --- MCQ LOGIC ---
+    let activeQuestions = [];
+    let currentQ = 0;
+    let score = 0;
+    let userName = "Anonymous";
+
+    function getAnsweredIDs() { return JSON.parse(localStorage.getItem('answered_mcq_ids') || '[]'); }
+    function saveAnsweredID(id) {
+      const history = getAnsweredIDs();
+      if (!history.includes(id)) { history.push(id); localStorage.setItem('answered_mcq_ids', JSON.stringify(history)); }
+    }
+    function updateUnansweredCount() {
+      if (typeof questionsBank === 'undefined' || questionsBank.length === 0) return;
+      const remaining = questionsBank.length - getAnsweredIDs().length;
+      document.getElementById('unanswered-count-text').innerText = `${remaining} out of ${questionsBank.length} questions remaining.`;
+    }
+    function resetAnswerHistory() {
+      if (confirm("Reset answered questions history?")) { localStorage.removeItem('answered_mcq_ids'); updateUnansweredCount(); }
+    }
+
+    function startQuiz() {
+      if (questionsBank.length === 0) {
+        alert("No questions loaded! Please check your database status on the homepage.");
+        return;
+      }
+
+      const inputName = document.getElementById('user-name-input').value.trim();
+      if (inputName) userName = inputName;
+      const selectedCount = parseInt(document.getElementById('question-count').value);
+      const unansweredOnly = document.getElementById('unanswered-only').checked;
+      const answeredIDs = getAnsweredIDs();
+
+      let pool = [...questionsBank];
+      pool.forEach((q, idx) => { q.id = q.id !== undefined ? q.id : idx; });
+
+      if (unansweredOnly) {
+        pool = pool.filter(q => !answeredIDs.includes(q.id));
+        if (pool.length === 0) { alert("All questions answered! Reset history."); return; }
+      }
+      pool.sort(() => 0.5 - Math.random());
+      activeQuestions = pool.slice(0, selectedCount);
+      currentQ = 0; score = 0;
+      showScreen('quiz-screen'); showQuestion();
+    }
+
+    function showQuestion() {
+      if (!activeQuestions || activeQuestions.length === 0) return;
+      document.getElementById('explanation').classList.add('hidden');
+      document.getElementById('flag-form-container').classList.add('hidden');
+      const q = activeQuestions[currentQ];
+      document.getElementById('progress-text').innerText = `Question ${currentQ + 1} of ${activeQuestions.length}`;
+      document.getElementById('question-text').innerText = q.question_text;
+
+      const imgContainer = document.getElementById('question-image-container');
+      const imgElement = document.getElementById('question-image');
+      const imageSource = q.image_url || q.image; 
+
+      if (imageSource) { 
+        imgElement.src = imageSource; 
+        imgContainer.classList.remove('hidden'); 
+      } else { 
+        imgContainer.classList.add('hidden'); 
+      }
+
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      [{ k: 'A', t: q.option_a }, { k: 'B', t: q.option_b }, { k: 'C', t: q.option_c }, { k: 'D', t: q.option_d }].forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn'; btn.id = `opt-${opt.k}`; btn.innerText = `${opt.k}) ${opt.t}`;
+        btn.onclick = () => handleAnswer(opt.k);
+        container.appendChild(btn);
+      });
+    }
+
+    function handleAnswer(selectedKey) {
+      const q = activeQuestions[currentQ];
+      document.querySelectorAll('.option-btn').forEach(btn => btn.onclick = null);
+      saveAnsweredID(q.id);
+
+      if (selectedKey === q.correct_option) { document.getElementById(`opt-${selectedKey}`).classList.add('correct'); score++; } 
+      else {
+        document.getElementById(`opt-${selectedKey}`).classList.add('wrong');
+        document.getElementById(`opt-${q.correct_option}`).classList.add('correct');
+      }
+      document.getElementById('explanation-text').innerText = q.explanation;
+      document.getElementById('explanation').classList.remove('hidden');
+    }
+
+    function toggleFlagForm() { document.getElementById('flag-form-container').classList.toggle('hidden'); }
+
+    function submitQuestionFlag() {
+      const q = activeQuestions[currentQ];
+      const reviewText = document.getElementById('flag-review-text').value.trim();
+      if (!reviewText) { alert("Please write a brief note."); return; }
+      
+      const payload = Object.keys({ "form-name": "question-flags", "user_name": userName, "question_text": q.question_text, "provided_answer": q.correct_option, "user_review": reviewText })
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(arguments[0][key])).join("&");
+
+      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: payload })
+      .then(() => { document.getElementById('flag-status-msg').innerText = "✓ Submitted!"; })
+      .catch(() => alert("Failed."));
+    }
+
+    function nextQuestion() {
+      currentQ++;
+      if (currentQ < activeQuestions.length) showQuestion();
+      else {
+        showScreen('result-screen');
+        const pct = Math.round((score / activeQuestions.length) * 100);
+        document.getElementById('score-text').innerText = `Score: ${score} / ${activeQuestions.length}`;
+        document.getElementById('percentage-text').innerText = `Accuracy: ${pct}%`;
+        document.getElementById('breakdown-text').innerText = `Correct: ${score} | Incorrect: ${activeQuestions.length - score}`;
+        if (pct >= 70) confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+      }
+    }
+
+    if (typeof definitionsBank !== 'undefined') loadDefinitions();
+    if (typeof questionsBank !== 'undefined' && questionsBank.length > 0) updateUnansweredCount();
+  </script>
+</body>
+</html>
