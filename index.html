@@ -89,6 +89,7 @@
         <div id="status-qmain" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions.js (Missing or Error)</div>
         <div id="status-q01" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions_01.js (Missing or Error)</div>
         <div id="status-q02" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions_02.js (Missing or Error)</div>
+        <div id="status-q03" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions_03.js (Missing or Error)</div>
         <div style="margin-top: 10px; font-weight: bold; color: #111827; border-top: 1px solid #E5E7EB; padding-top: 10px;">Total Questions Loaded: <span id="total-q-count" style="color: #4F46E5;">0</span></div>
       </div>
 
@@ -108,6 +109,14 @@
       <div class="setting-group">
         <label for="user-name-input">Your Name / Nickname:</label>
         <input type="text" id="user-name-input" placeholder="Enter your name (optional)" />
+      </div>
+      <div class="setting-group">
+        <label for="question-source">Question Source:</label>
+        <select id="question-source" onchange="updateUnansweredCount()">
+          <option value="all" selected>All Questions</option>
+          <option value="past-year">Past Year Questions Only</option>
+          <option value="other">Excluding Past Year Questions</option>
+        </select>
       </div>
       <div class="setting-group">
         <label for="question-count">Number of Questions:</label>
@@ -219,7 +228,8 @@
   <script src="questions.js"></script>
   <script src="questions_01.js"></script>
   <script src="questions_02.js"></script>
-  
+  <script src="questions_03.js"></script>
+
   <script src="definitions.js"></script>
   <script src="anatomy.js"></script>
 
@@ -240,11 +250,19 @@
       document.getElementById('status-q01').style.color = '#10B981';
     }
     // Check batch 02
-    if (typeof q02 !== 'undefined') { 
-      questionsBank.push(...q02); 
+    if (typeof q02 !== 'undefined') {
+      questionsBank.push(...q02);
       document.getElementById('status-q02').innerHTML = `🟢 questions_02.js loaded successfully (${q02.length} Qs)`;
       document.getElementById('status-q02').style.color = '#10B981';
     }
+    // Check batch 03
+    if (typeof q03 !== 'undefined') {
+      questionsBank.push(...q03);
+      document.getElementById('status-q03').innerHTML = `🟢 questions_03.js loaded successfully (${q03.length} Qs)`;
+      document.getElementById('status-q03').style.color = '#10B981';
+    }
+
+    questionsBank.forEach((q, idx) => { q.id = q.id !== undefined ? q.id : idx; });
 
     // Update total counter on dashboard
     document.getElementById('total-q-count').innerText = questionsBank.length;
@@ -376,10 +394,19 @@
       const history = getAnsweredIDs();
       if (!history.includes(id)) { history.push(id); localStorage.setItem('answered_mcq_ids', JSON.stringify(history)); }
     }
+    function getQuestionsBySource(source) {
+      if (source === 'past-year') return questionsBank.filter(q => q.tag === 'Past Year Question');
+      if (source === 'other') return questionsBank.filter(q => q.tag !== 'Past Year Question');
+      return questionsBank;
+    }
+
     function updateUnansweredCount() {
       if (typeof questionsBank === 'undefined' || questionsBank.length === 0) return;
-      const remaining = questionsBank.length - getAnsweredIDs().length;
-      document.getElementById('unanswered-count-text').innerText = `${remaining} out of ${questionsBank.length} questions remaining.`;
+      const source = document.getElementById('question-source').value;
+      const pool = getQuestionsBySource(source);
+      const answeredIDs = getAnsweredIDs();
+      const remaining = pool.filter(q => !answeredIDs.includes(q.id)).length;
+      document.getElementById('unanswered-count-text').innerText = `${remaining} out of ${pool.length} questions remaining.`;
     }
     function resetAnswerHistory() {
       if (confirm("Reset answered questions history?")) { localStorage.removeItem('answered_mcq_ids'); updateUnansweredCount(); }
@@ -395,10 +422,11 @@
       if (inputName) userName = inputName;
       const selectedCount = parseInt(document.getElementById('question-count').value);
       const unansweredOnly = document.getElementById('unanswered-only').checked;
+      const source = document.getElementById('question-source').value;
       const answeredIDs = getAnsweredIDs();
 
-      let pool = [...questionsBank];
-      pool.forEach((q, idx) => { q.id = q.id !== undefined ? q.id : idx; });
+      let pool = getQuestionsBySource(source);
+      if (pool.length === 0) { alert("No questions found for this source."); return; }
 
       if (unansweredOnly) {
         pool = pool.filter(q => !answeredIDs.includes(q.id));
