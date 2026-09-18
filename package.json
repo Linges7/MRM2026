@@ -1,0 +1,10 @@
+{
+  "name": "mrm2026",
+  "version": "1.0.0",
+  "description": "MCQ and a whole lot more",
+  "private": true,
+  "scripts": {
+    "build": "echo \"no build step required\"",
+    "start": "npx serve ."
+  }
+}
