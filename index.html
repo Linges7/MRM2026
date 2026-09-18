@@ -74,13 +74,6 @@
 <body>
 
   <div class="card">
-    <form name="question-flags" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="user_name" />
-      <input type="text" name="question_text" />
-      <input type="text" name="provided_answer" />
-      <textarea name="user_review"></textarea>
-    </form>
-
     <!-- SCREEN 1: Main Homepage -->
     <div id="home-screen">
       <h1 style="margin-top: 0; margin-bottom: 10px;">Rehab & Medicine Hub 🩺</h1>
@@ -453,13 +446,13 @@
       const q = activeQuestions[currentQ];
       const reviewText = document.getElementById('flag-review-text').value.trim();
       if (!reviewText) { alert("Please write a brief note."); return; }
-      
-      const payload = Object.keys({ "form-name": "question-flags", "user_name": userName, "question_text": q.question_text, "provided_answer": q.correct_option, "user_review": reviewText })
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(arguments[0][key])).join("&");
 
-      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: payload })
-      .then(() => { document.getElementById('flag-status-msg').innerText = "✓ Submitted!"; })
-      .catch(() => alert("Failed."));
+      const flag = { user_name: userName, question_text: q.question_text, provided_answer: q.correct_option, user_review: reviewText, ts: new Date().toISOString() };
+      const flags = JSON.parse(localStorage.getItem('question_flags') || '[]');
+      flags.push(flag);
+      localStorage.setItem('question_flags', JSON.stringify(flags));
+
+      document.getElementById('flag-status-msg').innerText = "✓ Saved locally!";
     }
 
     function nextQuestion() {
