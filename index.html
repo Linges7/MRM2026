@@ -92,6 +92,8 @@
         <div style="margin-top: 10px; font-weight: bold; color: #111827; border-top: 1px solid #E5E7EB; padding-top: 10px;">Total Questions Loaded: <span id="total-q-count" style="color: #4F46E5;">0</span></div>
       </div>
 
+      <button class="btn-secondary btn" id="view-flags-btn" onclick="showScreen('flags-screen'); loadFlaggedQuestions();" style="display: none; margin-top: 15px; font-size: 0.85rem;">⚠️ View Flagged Questions (<span id="flags-count">0</span>)</button>
+
       <div style="margin-top: 25px; text-align: left; font-size: 8pt; color: #9CA3AF; font-weight: 500;">
         Made By L&L, MRM2026
       </div>
@@ -200,6 +202,16 @@
       </div>
       <button class="btn" onclick="location.reload()">Return to Homepage</button>
     </div>
+
+    <!-- SCREEN 7: Flagged Questions -->
+    <div id="flags-screen" class="hidden clearfix">
+      <button class="btn-back" onclick="showScreen('home-screen')">🔙 Back to Home</button>
+      <div style="clear: both;"></div>
+      <h2 style="margin-top: 0;">Flagged Questions</h2>
+      <div id="flags-list" style="text-align: left;"></div>
+      <button class="btn btn-secondary" onclick="downloadFlaggedQuestions()" style="margin-top: 10px;">⬇️ Download as JSON</button>
+      <button class="btn-warning btn" style="width: 100%;" onclick="clearFlaggedQuestions()">Clear All</button>
+    </div>
   </div>
 
   <!-- Load ALL External Data Files -->
@@ -237,7 +249,7 @@
     document.getElementById('total-q-count').innerText = questionsBank.length;
 
     function showScreen(screenId) {
-      const screens = ['home-screen', 'mcq-setup-screen', 'definitions-screen', 'quiz-screen', 'anatomy-screen', 'result-screen'];
+      const screens = ['home-screen', 'mcq-setup-screen', 'definitions-screen', 'quiz-screen', 'anatomy-screen', 'result-screen', 'flags-screen'];
       screens.forEach(id => document.getElementById(id).classList.add('hidden'));
       document.getElementById(screenId).classList.remove('hidden');
     }
@@ -409,16 +421,20 @@
       const imgElement = document.getElementById('question-image');
       const imageSource = q.image_url || q.image; 
 
-      if (imageSource) { 
-        imgElement.src = imageSource; 
-        imgContainer.classList.remove('hidden'); 
-      } else { 
-        imgContainer.classList.add('hidden'); 
+      if (imageSource) {
+        imgElement.onerror = () => imgContainer.classList.add('hidden');
+        imgElement.src = imageSource;
+        imgContainer.classList.remove('hidden');
+      } else {
+        imgContainer.classList.add('hidden');
       }
 
       const container = document.getElementById('options-container');
       container.innerHTML = '';
-      [{ k: 'A', t: q.option_a }, { k: 'B', t: q.option_b }, { k: 'C', t: q.option_c }, { k: 'D', t: q.option_d }].forEach(opt => {
+      ['A', 'B', 'C', 'D', 'E', 'F']
+        .map(k => ({ k, t: q[`option_${k.toLowerCase()}`] }))
+        .filter(opt => opt.t !== undefined && opt.t !== null && opt.t !== '')
+        .forEach(opt => {
         const btn = document.createElement('button');
         btn.className = 'option-btn'; btn.id = `opt-${opt.k}`; btn.innerText = `${opt.k}) ${opt.t}`;
         btn.onclick = () => handleAnswer(opt.k);
@@ -451,8 +467,45 @@
       const flags = JSON.parse(localStorage.getItem('question_flags') || '[]');
       flags.push(flag);
       localStorage.setItem('question_flags', JSON.stringify(flags));
+      updateFlagsButton();
 
       document.getElementById('flag-status-msg').innerText = "✓ Saved locally!";
+    }
+
+    function updateFlagsButton() {
+      const flags = JSON.parse(localStorage.getItem('question_flags') || '[]');
+      document.getElementById('flags-count').innerText = flags.length;
+      document.getElementById('view-flags-btn').style.display = flags.length > 0 ? 'block' : 'none';
+    }
+
+    function loadFlaggedQuestions() {
+      const flags = JSON.parse(localStorage.getItem('question_flags') || '[]');
+      const list = document.getElementById('flags-list');
+      list.innerHTML = flags.length === 0 ? '<p>No flagged questions.</p>' : '';
+      flags.slice().reverse().forEach(f => {
+        const item = document.createElement('div');
+        item.className = 'definition-item';
+        item.innerHTML = `<strong>${f.user_name} · ${new Date(f.ts).toLocaleString()}</strong><p>${f.question_text}</p><p><em>Provided answer: ${f.provided_answer}</em></p><p>${f.user_review}</p>`;
+        list.appendChild(item);
+      });
+    }
+
+    function downloadFlaggedQuestions() {
+      const flags = JSON.parse(localStorage.getItem('question_flags') || '[]');
+      const blob = new Blob([JSON.stringify(flags, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'flagged_questions.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function clearFlaggedQuestions() {
+      if (confirm("Clear all flagged questions? This cannot be undone.")) {
+        localStorage.removeItem('question_flags');
+        loadFlaggedQuestions();
+        updateFlagsButton();
+      }
     }
 
     function nextQuestion() {
@@ -470,6 +523,7 @@
 
     if (typeof definitionsBank !== 'undefined') loadDefinitions();
     if (typeof questionsBank !== 'undefined' && questionsBank.length > 0) updateUnansweredCount();
+    updateFlagsButton();
   </script>
 </body>
 </html>
