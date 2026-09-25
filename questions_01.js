@@ -469,8 +469,8 @@ const q01 = [
   },
   {
     "question_text": "What two tendons comprise the first dorsal compartment of the wrist?",
-    "option_a": "Extensor pollicis brevis (EP",
-    "option_b": "",
+    "option_a": "Abductor pollicis longus (APL) and extensor pollicis brevis (EPB)",
+    "option_b": "Flexor carpi radialis (FCR) and palmaris longus (PL)",
     "option_c": "Extensor carpi radialis longus and APL",
     "option_d": "Extensor carpi radialis brevis and APB",
     "correct_option": "A",
@@ -741,7 +741,7 @@ const q01 = [
     "question_text": "Which ligament can be mistaken for a tear of the posterior horn of the lateral meniscus on MRI?",
     "option_a": "Anterior cruciate ligament (ACL)",
     "option_b": "Posterior cruciate ligament (PCL)",
-    "option_c": "",
+    "option_c": "Popliteus tendon",
     "option_d": "Oblique popliteal ligament (OPL)",
     "correct_option": "C",
     "explanation": "The APLC provides attachment for the posterior lateral meniscus, and this site can be mistaken for a posterior tear of the lateral meniscus."
@@ -1460,7 +1460,7 @@ const q01 = [
   {
     "question_text": "What physical exam finding will be observed in \"Saturday night palsy\"?",
     "option_a": "Marked wrist and finger drop",
-    "option_b": "",
+    "option_b": "Weakness of thumb abduction (median nerve)",
     "option_c": "Weak elbow extension",
     "option_d": "Painless weakness and atrophy of hand intrinsic muscle",
     "correct_option": "A",
@@ -1678,7 +1678,7 @@ const q01 = [
     "option_a": "Extensor pollicis longus (EPL) and flexor digitorum superfi cialis (FDS)",
     "option_b": "and abductor pollicis longus (APL)",
     "option_c": "Flexor carpi radialis (FCR) and palmaris longus (PL)",
-    "option_d": "Extensor pollicis brevis (EP",
+    "option_d": "Extensor pollicis brevis (EPB)",
     "correct_option": "D",
     "explanation": "De Quervain's is a tenosynovitis of the first dorsal compartment of the hand/wrist. The APL and EPB tendons are involved. Finkelstein's test is usually positive (pain is elicited along the radial aspect of the wrist when the wrist is forced into ulnar deviation with the thumb in a closed fist)."
   },
@@ -1980,7 +1980,7 @@ const q01 = [
     "explanation": "The most common type of hip dislocation is posterior (90%)."
   },
   {
-    "question_text": "Evaluation of scoliosis involves the Adam's test (forward bending test) and measuring the Cobb angle using a posterior-anterior (P",
+    "question_text": "Evaluation of scoliosis involves the Adam's test (forward bending test) and measuring the Cobb angle using a posterior-anterior (PA)",
     "option_a": "The angle formed at the intersection between the horizontal line drawn along the iliac crest and a line drawn along the superior end plate of the vertebra tilted the most at the top of the curve",
     "option_b": "The angle formed at the intersection between a line drawn along the superior endplate of the vertebra tilted the most at the top of the curve, and a similar line drawn along the inferior endplate of the vertebra tilted the most at the bottom of the curve",
     "option_c": "The angle formed at the intersection between a line drawn along the superior endplate of the vertebra tilted the most at the top of the curve, and a similar line drawn bisecting the center of the curve",
@@ -2151,8 +2151,8 @@ const q01 = [
     "explanation": "Hip pointers are seen in contact sports such as football and hockey, and are usually seen at the greater trochanter and iliac crest. There can be hematoma formation but there is usually focal tenderness. Patients should have full range of motion of the hip. X-rays should be considered if there is severe pain with passive range of motion."
   },
   {
-    "question_text": "What is a Rockwood type II acromioclavicular (A",
-    "option_a": "Sprain of the AC and coracoacromial (C",
+    "question_text": "What is a Rockwood type II acromioclavicular (AC)",
+    "option_a": "Sprain of the AC and coracoacromial (CC)",
     "option_b": "Torn CC ligament and intact AC ligament",
     "option_c": "Torn AC ligament and sprained CC ligament",
     "option_d": "Torn AC and CC ligaments",
@@ -2847,7 +2847,7 @@ const q01 = [
     "question_text": "The Riche-Cannieu anastomosis:",
     "option_a": "Is a communication between the deep branch of the ulnar nerve and the recurrent branch of the median nerve in the hand",
     "option_b": "with an ulnar nerve lesion at the elbow",
-    "option_c": "May have denervation in the abductor pollicis brevis (AP",
+    "option_c": "May have denervation in the abductor pollicis brevis (APB)",
     "option_d": "All of the above",
     "correct_option": "D",
     "explanation": "The Riche-Cannieu anastomosis is a communication between the deep branch of the ulnar nerve and the recurrent branch of the median nerve in the hand. It can produce an all-ulnar hand. Therefore, if the ulnar nerve is injured proximally, the muscles normally innervated by the median nerve (but now innervated via the ulnar nerve anastomosis) may show signs of injury. Conversely, if the patient has a complete laceration of the median nerve at the wrist, he or she may still retain thenar function via the anastomosis."
@@ -2943,7 +2943,7 @@ const q01 = [
     "explanation": "The patient has the right to terminate the test at any point. It is best to explain the benefi ts of continuing the test and ask the patient whether they are sure that this is what they want. If the patient insists, this should be documented in the EMG report."
   },
   {
-    "question_text": "A patient presents with weakness in the right hand. Electromyography (EMG)/nerve conduction study (NCS) findings are as follows: - Right median motor latency = 4.3 msec - Right ulnar motor latency = 2.2 msec - Left median motor latency = 3.2 msec - Right median sensory conduction velocity across the wrist = 36 m/sec - Right median sensory conduction velocity distally = 44 m/sec - Needle EMG of the right abductor pollicis brevis (AP",
+    "question_text": "A patient presents with weakness in the right hand. Electromyography (EMG)/nerve conduction study (NCS) findings are as follows: - Right median motor latency = 4.3 msec - Right ulnar motor latency = 2.2 msec - Left median motor latency = 3.2 msec - Right median sensory conduction velocity across the wrist = 36 m/sec - Right median sensory conduction velocity distally = 44 m/sec - Needle EMG of the right abductor pollicis brevis (APB)",
     "option_a": "No more testing is indicated",
     "option_b": "Test the left ulnar motor nerve",
     "option_c": "Needle evaluation of the right pronator teres muscle",
@@ -2970,7 +2970,7 @@ const q01 = [
     "explanation": "To assess whether a patient has a peripheral neuropathy, it is necessary to test sensory and motor nerves in three limbs. Therefore, the peroneal and sural (or any other sensory and motor nerve in the lower extremity) should be performed."
   },
   {
-    "question_text": "In a patient with an accessory peroneal nerve, stimulation proximally at the fibular head with pickup over the extensor digitorum brevis (ED",
+    "question_text": "In a patient with an accessory peroneal nerve, stimulation proximally at the fibular head with pickup over the extensor digitorum brevis (EDB)",
     "option_a": "Larger compound motor action potential (CMAP) amplitude than distally at the ankle",
     "option_b": "Increased CMAP conduction velocity proximally",
     "option_c": "Positive defl ection of the CMAP",
@@ -3448,9 +3448,9 @@ const q01 = [
   },
   {
     "question_text": "Which vessel is often involved in patients with global aphasia?",
-    "option_a": "",
-    "option_b": "Middle cerebral artery (MC",
-    "option_c": "Posterior cerebral artery (PC",
+    "option_a": "Anterior cerebral artery (ACA)",
+    "option_b": "Middle cerebral artery (MCA)",
+    "option_c": "Posterior cerebral artery (PCA)",
     "option_d": "Basilar artery",
     "correct_option": "B",
     "explanation": "Global aphasia describes the most severe form of language defi cits in which both written and spoken language are impaired. It often involves both Broca's and Wernicke's areas and spans over both anterior and posterior regions of the brain. The MCA is the only vessel of the four answer choices that affects both anterior and posterior regions of the cerebrum, and is often associated with global aphasia."
@@ -3800,7 +3800,7 @@ const q01 = [
   {
     "question_text": "What is the most common direct cause of dysphagia?",
     "option_a": "Delayed pharyngeal swallow",
-    "option_b": "Gastroesophageal refl ux disease (GER",
+    "option_b": "Gastroesophageal refl ux disease (GERD)",
     "option_c": "Unilateral weakness in one or more muscles of mastication",
     "option_d": "Facial droop with incomplete lip closure",
     "correct_option": "A",
@@ -3889,9 +3889,9 @@ const q01 = [
   },
   {
     "question_text": "The benefi ts of the videofl uoroscopic evaluation include:",
-    "option_a": "and (",
-    "option_b": "",
-    "option_c": "Choices (",
+    "option_a": "It can be diagnostic",
+    "option_b": "It can be therapeutic",
+    "option_c": "Both (A) and (B)",
     "option_d": "None of the above",
     "correct_option": "C",
     "explanation": "The videofl uoroscopic evaluation is a radiographic tool used to diagnose causes of swallowing disorders. Food particles mixed with barium are swallowed as x-ray imaging of the process is obtained. Because the images are moving (and therefore able to evaluate function), the evaluation can be therapeutic as well. A speech pathologist can work with the physiatrist to try different compensatory maneuvers by the patient and see immediate results of the efforts recorded by the radiologist. Alternative sizes and textures of foods can be trialed during the procedure. In this way, the videofl uoroscopic evaluation can be both diagnostic and therapeutic."
@@ -4006,9 +4006,9 @@ const q01 = [
   },
   {
     "question_text": "Oral-phase dysphagia may be a result of which of the following?",
-    "option_a": "and (",
-    "option_b": "",
-    "option_c": "Choices (",
+    "option_a": "Facial weakness",
+    "option_b": "Poor lingual control",
+    "option_c": "Both (A) and (B)",
     "option_d": "None of the above",
     "correct_option": "C",
     "explanation": "Oral-phase dysphagia can arise from facial weakness, poor lingual control, or both. Several compensation mechanisms can be taught in therapy for this condition. For facial weakness, food texture can be modifi ed and food can be placed at the back of the mouth or on the stronger side of the face. The head can also be tilted toward the stronger side. Sucking/blowing exercises may be helpful. Electromyogram (EMG) biofeedback performed by the physician may be helpful as well. For poor lingual control, tongue active range of motion and strengthening can be prescribed. Precise articulation should be encouraged in conjunction with this technique."
@@ -4104,7 +4104,7 @@ const q01 = [
     "explanation": "In ALS, there is weakness and muscle atrophy caused by degeneration of upper and lower motor neurons."
   },
   {
-    "question_text": "Duchenne muscular dystrophy (DM",
+    "question_text": "Duchenne muscular dystrophy (DMD)",
     "option_a": "Dystrophin",
     "option_b": "Axon",
     "option_c": "Myelin",
@@ -4149,7 +4149,7 @@ const q01 = [
     "explanation": "Symptoms such as blurred vision and diplopia can occur, along with nausea and vomiting, between 12 and 36 hours after consuming raw meat, fish, canned vegetables, or honey, making answer choice (C) the best answer. Bulbar symptoms are noted first and include ptosis, dysphagia, or dysarthria. Gastrointestinal symptoms include nausea and vomiting, and then there may be widespread paralysis or flaccidity. If severe, there may be respiratory dysfunction. Lab work may reveal botulinum toxin in the stool or blood serum. Recovery occurs from collateral sprouting of nerves."
   },
   {
-    "question_text": "All of the following are clinical features of facioscapulohumeral dystrophy (FSH",
+    "question_text": "All of the following are clinical features of facioscapulohumeral dystrophy (FSHD)",
     "option_a": "Inability to extend the wrist",
     "option_b": "Inability to whistle",
     "option_c": "Deltoid muscle weakness",
@@ -4204,8 +4204,8 @@ const q01 = [
   },
   {
     "question_text": "Which condition is characterized by onset before age 20 years, gait ataxia, and progressive paralysis?",
-    "option_a": "",
-    "option_b": "Spinal muscular atrophy (SM",
+    "option_a": "Guillain-Barre syndrome (GBS)",
+    "option_b": "Spinal muscular atrophy (SMA)",
     "option_c": "Friedreich's ataxia",
     "option_d": "Becker's muscular dystrophy (BMD)",
     "correct_option": "C",
@@ -4248,7 +4248,7 @@ const q01 = [
     "explanation": "This patient most likely has myasthenia gravis (MG). MG is a neuromuscular disorder affecting postsynaptic acetylcholine receptors. It can present with muscle weakness, especially with repetitive movements. Edrophonium is a rapidly acting reversible acetylcholinesterase inhibitor which, when given, will block acetylcholinesterase enzymes and allow acetylcholine to bind to its receptor. The Tensilon test is when edrophonium is given via IV. The patient's muscle strength is observed for improvement over the next few minutes. Patients with severe ptosis from MG may see their ptosis completely resolve for a short period of time. Neostigmine, pyridostigmine, and prednisone are all medications used in the treatment of MG. Neostigmine and pyridostigmine are both longer-acting acetylcholinesterase inhibitors, compared to edrophonium. Prednisone is an immunosuppressant that is used in some MG exacerbations."
   },
   {
-    "question_text": "A patient with spinal muscular atrophy (SM",
+    "question_text": "A patient with spinal muscular atrophy (SMA)",
     "option_a": "Assisted sitting",
     "option_b": "Independent sitting",
     "option_c": "Independent standing",
@@ -4267,9 +4267,9 @@ const q01 = [
   },
   {
     "question_text": "A teenager presents with an elbow flexion contracture and mild weakness that has affected his ability to walk. On physical exam, you also notice a neck extension contracture. Which of the following is he most likely to have?",
-    "option_a": "Becker's muscular dystrophy (BM",
-    "option_b": "Emery-Dreifuss muscular dystrophy (EM",
-    "option_c": "Facioscapulohumeral dystrophy (FSH",
+    "option_a": "Becker's muscular dystrophy (BMD)",
+    "option_b": "Emery-Dreifuss muscular dystrophy (EMD)",
+    "option_c": "Facioscapulohumeral dystrophy (FSHD)",
     "option_d": "Limb-girdle muscular dystrophy (LGMD)",
     "correct_option": "B",
     "explanation": "This is an X-linked and slowly progressive myopathy caused by an abnormality of the protein emerin with a gene locus identifi ed at Xq28. Patients usually present in the teenage years, and early elbow flexion contractures are the hallmark of the disease. Ankle equinus, rigid spine, and neck extension contractures can also be seen and are often more limiting than the weakness. This disease is also associated with cardiac arrhythmias and almost always present by the age of 40 years. Twenty-four-hour Holter monitoring is required, as arrhythmias may not be obvious clinically or on routine ECG. EMD is managed by promotion of ambulation, prevention of deformities or their progression, monitoring cardiac status, and assessment of respiratory function."
@@ -4384,9 +4384,9 @@ const q01 = [
   },
   {
     "question_text": "A 19-year-old female presents to your outpatient offi ce with complaints of not being able to smile or close her eyes. She is not able to whistle and has some hearing diffi culties. On physical exam, scapula winging is present. Which of the following is she most likely to have?",
-    "option_a": "Becker's muscular dystrophy (BM",
-    "option_b": "Duchenne muscular dystrophy (DM",
-    "option_c": "Facioscapulohumeral dystrophy (FSH",
+    "option_a": "Becker's muscular dystrophy (BMD)",
+    "option_b": "Duchenne muscular dystrophy (DMD)",
+    "option_c": "Facioscapulohumeral dystrophy (FSHD)",
     "option_d": "Limb-girdle muscular dystrophy (LGMD)",
     "correct_option": "C",
     "explanation": "FSHD is a slowly progressive muscular dystrophic myopathy and involves the facial and shoulder girdle muscles. It is an autosomal dominant condition. Presentation is usually before the age of 20 years and usually presents with weakness of the facial (orbicularis oculi and orbicularis oris) or shoulder girdle muscles (scapular and humeral distribution). Prominent scapula winging and biceps/triceps weakness may be present. There is relative sparing of the deltoid. Patients can be described as having an expressionless face and have diffi culty with pursing lips, smiling, drinking through a straw, or whistling. There is also asymmetry of muscle involvement, which is unlike most other muscular dystrophies. Patients with FSHD also have sensorineural hearing defi cits, and therefore all should have screening audiometry."
@@ -4395,7 +4395,7 @@ const q01 = [
     "question_text": "The movement disorder that results from a decrease in dopamine input in the striatum and an increase in cholinergic input is:",
     "option_a": "Multiple sclerosis",
     "option_b": "Friedreich's ataxia",
-    "option_c": "Parkinson's disease (P",
+    "option_c": "Parkinson's disease (PD)",
     "option_d": "Huntington's disease",
     "correct_option": "C",
     "explanation": "PD involves a pathologic degenerative process of the brain stem nuclei. This is especially true of dopaminergic cells of the substantia nigra. In addition, there is an excess of cholinergic neurons in the caudate nuclei. This causes an imbalance between cholinergic and dopaminergic input in the striatum and is responsible for the symptoms seen in PD."
@@ -4455,7 +4455,7 @@ const q01 = [
     "explanation": "The toxin is usually found in stool or blood. Myasthenia gravis and Lambert-Eaton myasthenic syndrome would require a muscle biopsy."
   },
   {
-    "question_text": "A baby with spinal muscular atrophy (SM",
+    "question_text": "A baby with spinal muscular atrophy (SMA)",
     "option_a": "Weak cry, dysphagia, weak suck",
     "option_b": "Normal developmental milestones until age 3 years",
     "option_c": "Mild weakness of proximal muscles at birth",
@@ -4501,9 +4501,9 @@ const q01 = [
   },
   {
     "question_text": "An 18-year-old boy with an X-linked genetic disease has a mild functional disability, proximal muscles weakness, prominent calves, lordosis, and a waddling gait. He is not a wheelchair user. Which of the following conditions is he most likely to have?",
-    "option_a": "Becker's muscular dystrophy (BM",
-    "option_b": "Duchenne muscular dystrophy (DM",
-    "option_c": "Facioscapulohumeral dystrophy (FSH",
+    "option_a": "Becker's muscular dystrophy (BMD)",
+    "option_b": "Duchenne muscular dystrophy (DMD)",
+    "option_c": "Facioscapulohumeral dystrophy (FSHD)",
     "option_d": "Limb-girdle muscular dystrophy (LGMD)",
     "correct_option": "A",
     "explanation": "BMD is an X-linked muscular dystrophy with similar clinical pattern and gene locus to Duchenne, but with mild and slower progression. The patient in this question is 18 years old and is still able to ambulate. Patients with Duchenne are usually wheelchair users by the age of 10 years if not treated with corticosteroids. Ambulation past 14 years of age should raise suspicion for a milder muscular dystrophy such as Becker's or LGMD. LGMD is an autosomal recessive condition."
@@ -4546,9 +4546,9 @@ const q01 = [
   },
   {
     "question_text": "A 12-year-old boy comes into your offi ce complaining of progressive hearing defi cits. He is having diffi culty whistling a tune he is listening to on headphones on his good ear. On examination, he is noted to have some hyperlordosis of his spine. Which condition do you suspect the boy may have?",
-    "option_a": "Duchenne muscular dystrophy (DM",
-    "option_b": "Emery-Dreifuss muscular dystrophy (EM",
-    "option_c": "Facioscapulohumeral dystrophy (FSH",
+    "option_a": "Duchenne muscular dystrophy (DMD)",
+    "option_b": "Emery-Dreifuss muscular dystrophy (EMD)",
+    "option_c": "Facioscapulohumeral dystrophy (FSHD)",
     "option_d": "Limb-girdle syndromes",
     "correct_option": "C",
     "explanation": "Features in this vignette are suggestive of the diagnosis of facioscapulohumeral dystrophy. Initial weakness affects facial muscles, especially the orbicularis oculi, zygomaticus, and the orbicularis oris. Clinical features include facial weakness, scapular winging, shoulder girdle weakness, and lordosis due to pelvic girdle weakness. Choice (A) is a syndrome that includes hypotonia, early contractures, equinovarus deformities, knee flexion contractures, and delayed motor milestones. A child of 12 years would already have symptoms. Choice (B) is a dystrophy marked by the presence of early contractures of the elbow flexors (limited extension) and heel cord tightness with ankle dorsifl exion weakness (toe-walking may be present). Choice (D) refers to syndromes that are similar to Becker's or Duchenne muscular dystrophy but predominantly affect shoulder and girdle muscles, causing weakness."
@@ -4572,7 +4572,7 @@ const q01 = [
     "explanation": "Lambert-Eaton myasthenic syndrome is associated with small-cell lung tumor. Myasthenia gravis is associated with thymic tumor. Botulism is associated with ingestion of contaminated raw meat, canned vegetables, honey, or fish."
   },
   {
-    "question_text": "Patients with facioscapulohumeral dystrophy (FSH",
+    "question_text": "Patients with facioscapulohumeral dystrophy (FSHD)",
     "option_a": "Hand weakness",
     "option_b": "Scapular winging",
     "option_c": "Spasticity",
@@ -4617,7 +4617,7 @@ const q01 = [
     "explanation": "This decreases calcium entry into the cell, causing a decreased release of acetylcholine into the synaptic cleft. There is a strong association with malignancy, such as small-cell (oat-cell) carcinoma of the lung. Answer choice (A) describes botulism, and answer choice (C) describes myasthenia gravis."
   },
   {
-    "question_text": "A patient with Duchenne muscular dystrophy (DM",
+    "question_text": "A patient with Duchenne muscular dystrophy (DMD)",
     "option_a": "Sudden cardiac death",
     "option_b": "No contractures because of flaccid limbs",
     "option_c": "Fecal incontinence",
@@ -4656,7 +4656,7 @@ const q01 = [
     "question_text": "Huntington's disease is characterized by all the features listed below except:",
     "option_a": "in the basal ganglia",
     "option_b": "Trinucleotide repeat sequence of cytosine, adenine, and guanine (CAG) in the DNA",
-    "option_c": "Markedly decreased amount of gamma-aminobutyric acid (GAB",
+    "option_c": "Markedly decreased amount of gamma-aminobutyric acid (GABA)",
     "option_d": "Microscopically noted to have intracytoplasmic eosinophilic inclusions called Lewy bodies in damaged cells",
     "correct_option": "D",
     "explanation": "All the answer choices are features of Huntington's disease except for choice (D), which is seen in Parkinson's disease."
@@ -4726,9 +4726,9 @@ const q01 = [
   },
   {
     "question_text": "Cognition may be impaired in which of the following myopathies?",
-    "option_a": "Becker's muscular dystrophy (BM",
-    "option_b": "Duchenne muscular dystrophy (DM",
-    "option_c": "Facioscapulohumeral dystrophy (FSH",
+    "option_a": "Becker's muscular dystrophy (BMD)",
+    "option_b": "Duchenne muscular dystrophy (DMD)",
+    "option_c": "Facioscapulohumeral dystrophy (FSHD)",
     "option_d": "Limb-girdle muscular dystrophy (LGMD)",
     "correct_option": "B",
     "explanation": "The dystrophin isomer is present in the brain. As there is an absence of this dystrophin protein in DMD, there have been lower IQ levels seen in affected children. Mean IQ scores have been 1 to 1.5 standard deviations below the normal population. An increase in autism and obsessivecompulsive disorder is also seen in DMD patients."
@@ -4834,9 +4834,9 @@ const q01 = [
   },
   {
     "question_text": "Which of the following myopathies is not associated with cardiac abnormalities?",
-    "option_a": "Becker's muscular dystrophy (BM",
-    "option_b": "Duchenne muscular dystrophy (DM",
-    "option_c": "Facioscapulohumeral dystrophy (FSH",
+    "option_a": "Becker's muscular dystrophy (BMD)",
+    "option_b": "Duchenne muscular dystrophy (DMD)",
+    "option_c": "Facioscapulohumeral dystrophy (FSHD)",
     "option_d": "Limb-girdle muscular dystrophy (LGMD)",
     "correct_option": "C",
     "explanation": "The presence of cardiac abnormalities in FSHD is rare. It is important to note that cardiomyopathy is seen prominently in Becker's and Duchenne muscular dystrophy. These patients have abnormalities in the dystrophin protein that is also present in myocardium and Purkinje fibers. ECG abnormalities can be seen, such as Q-waves in lateral leads, elevated ST segments, poor R-wave progression, and resting tachycardia. Cardiomyopathy is seen in nearly all patients older than 18 years in Duchenne. Cardiomyopathy may also be seen in Limb-girdle muscular dystrophy."
@@ -4888,9 +4888,9 @@ const q01 = [
   },
   {
     "question_text": "A patient seen in the stroke recreational unit is told to draw a clock. After examining his illustration, you note that all the numbers of the clock are written and squeezed to the right side. Where do you suspect is his lesion?",
-    "option_a": "",
+    "option_a": "Left MCA",
     "option_b": "Right MCA",
-    "option_c": "Left anterior cerebral artery (AC",
+    "option_c": "Left anterior cerebral artery (ACA)",
     "option_d": "Right ACA",
     "correct_option": "B",
     "explanation": "This question describes findings of classical left-sided neglect. This feature is commonly seen in a right-MCA lesion (nondominant parietal lobe). With a lesion in the right MCA, the patient may present with intact speech but hemiparesis with focal weakness more on the upper extremity than lower extremity. There may be signs of impulsiveness and defi cits in spatial perception as well as constructional apraxia. A lesion in the left MCA would involve the patient's speech and right-sided hemiparesis."
@@ -5023,7 +5023,7 @@ const q01 = [
   },
   {
     "question_text": "Which of the following disorders gives a patient an \"inverted champagne bottle\" or \"stork leg\" appearance?",
-    "option_a": "Duchenne muscular dystrophy (DM",
+    "option_a": "Duchenne muscular dystrophy (DMD)",
     "option_b": "Charcot-Marie-Tooth (CMT) disease",
     "option_c": "Myasthenia gravis",
     "option_d": "Spinal muscular atrophy",
@@ -5041,18 +5041,18 @@ const q01 = [
   },
   {
     "question_text": "Which of the following is the most common presenting form of motor neuron disease in adults?",
-    "option_a": "",
+    "option_a": "Amyotrophic lateral sclerosis (ALS)",
     "option_b": "Poliomyelitis",
-    "option_c": "Spinal muscular atrophy (SM",
+    "option_c": "Spinal muscular atrophy (SMA)",
     "option_d": "Primary lateral sclerosis (PLS)",
     "correct_option": "A",
     "explanation": "ALS is also called Lou Gehrig's disease, as it was named after the New York Yankees' first baseman who passed away from this disorder. This is unfortunately still the most widely known motor neuron disease and is the most common presenting form. The incidence of ALS is approximately 1.6 to 2.4 cases per 100,000 population."
   },
   {
     "question_text": "Which myopathy is characterized by a steadily progressive, X-linked muscular dystrophy that is characterized by absent dystrophin or less than 3% that is normal?",
-    "option_a": "Becker's muscular dystrophy (BM",
-    "option_b": "Duchenne muscular dystrophy (DM",
-    "option_c": "Limb-girdle muscular dystrophy (LGM",
+    "option_a": "Becker's muscular dystrophy (BMD)",
+    "option_b": "Duchenne muscular dystrophy (DMD)",
+    "option_c": "Limb-girdle muscular dystrophy (LGMD)",
     "option_d": "Facioscapulohumeral dystrophy (FSHD)",
     "correct_option": "B",
     "explanation": "DMD is an X-linked disorder with an abnormality in the Xp21 gene locus. There is dystrophin defi ciency that disrupts the membrane cytoskeleton and leads to membrane instability. Chronically, this will lead to fibrotic replacement of muscle and failure of regeneration with muscle fiber death. Absent dystrophin or less than 3% of normal is diagnostic of DMD. Becker's is also an X-linked disorder, but quantitative dystrophin analysis shows dystrophin levels of 20% to 80%. Answer choices (C) and (D) are not X-linked disorders."
@@ -5421,8 +5421,8 @@ const q01 = [
     "question_text": "You are most likely to see conduction aphasia following damage to:",
     "option_a": "watershed areas",
     "option_b": "The angular gyrus",
-    "option_c": "Middle cerebral artery-posterior cerebral artery (MCA-PC",
-    "option_d": "Middle cerebral artery-anterior cerebral artery (MCA-AC",
+    "option_c": "Middle cerebral artery-posterior cerebral artery (MCA-PCA)",
+    "option_d": "Middle cerebral artery-anterior cerebral artery (MCA-ACA)",
     "correct_option": "A",
     "explanation": "Conduction aphasia is considered a disconnection syndrome in which speech comprehension (Wernicke's area) is disconnected via a lesion in the arcuate fasciculus from the speech production area (Broca's area)."
   },
@@ -5518,9 +5518,9 @@ const q01 = [
   },
   {
     "question_text": "Overall, the most common cause of severe traumatic brain injury (TBI) is:",
-    "option_a": "",
+    "option_a": "Child abuse",
     "option_b": "Falls",
-    "option_c": "Motor vehicle accidents (MV",
+    "option_c": "Motor vehicle accidents (MVA)",
     "option_d": "Assault",
     "correct_option": "C",
     "explanation": "MVA accounts for approximately 50% of all TBI cases. Assault is the second most common cause. However, the most common cause of TBI varies by age group. Falls and child abuse are more common in infants and toddlers. Older children have higher rates of accidental trauma and MVA. In adolescents, TBI is more commonly due to violence and risk-taking behavior. In patients over age 65 years, TBI is most commonly due to falls."
@@ -5599,9 +5599,9 @@ const q01 = [
   },
   {
     "question_text": "How is the severity of a concussion graded?",
-    "option_a": "",
-    "option_b": "Presence of loss of consciousness (LO",
-    "option_c": "Presence of posttraumatic amnesia (PT",
+    "option_a": "Duration of unconsciousness",
+    "option_b": "Presence of loss of consciousness (LOC)",
+    "option_c": "Presence of posttraumatic amnesia (PTA)",
     "option_d": "Severity of ongoing symptoms",
     "correct_option": "D",
     "explanation": "A concussion is a mild traumatic brain injury and should never be graded with grading scales. The majority of concussions do not have LOC and therefore should not be used as an indication of severity. Concussion severity is determined by the number, severity, and length of symptoms present."
@@ -5826,7 +5826,7 @@ const q01 = [
     "question_text": "Which of the following is not true about diffuse axonal injury (DAI)?",
     "option_a": "Primarily occurs at the gray matter",
     "option_b": "Only seen in traumatic brain injury (TBI)",
-    "option_c": "",
+    "option_c": "Can result in loss of consciousness (LOC)",
     "option_d": "Occurs from acceleration-deceleration and rotational forces",
     "correct_option": "A",
     "explanation": "DAI is seen in the white matter, primarily in the corpus callosum, midbrain, pons, and central white matter. DAI is caused by disruption of the axons due to acceleration-deceleration and rotational forces that cause shearing upon impact. DAI primarily occurs in TBI cases and can result in LOC. Injury primarily occurs in the white matter, where petechial hemorrhages are characteristic."
@@ -5851,7 +5851,7 @@ const q01 = [
   },
   {
     "question_text": "Baclofen is an antispasticity agent that is:",
-    "option_a": "",
+    "option_a": "A GABA-B receptor agonist (structural analogue of GABA)",
     "option_b": "An alpha-2 adrenergic agonist",
     "option_c": "A hydantoin derivative",
     "option_d": "An imidazoline derivative",
@@ -5868,7 +5868,7 @@ const q01 = [
     "explanation": "Some of the limitations of the NIH stroke scale are that elements of brain stem function are not well refl ected, palatal weakness is not scored, it does not assess distal weakness, and it does not screen for neurocognitive dysfunction."
   },
   {
-    "question_text": "The inclusion criterion for tissue plasminogen activator (tP",
+    "question_text": "The inclusion criterion for tissue plasminogen activator (tPA)",
     "option_a": "18 years of age or older with informed consent",
     "option_b": "Head CT negative for blood",
     "option_c": "Well-established time of onset less than 3 hours before treatment initiation with moderate to severe stroke symptoms",
@@ -5916,14 +5916,14 @@ const q01 = [
     "question_text": "Parkinson's disease has been linked to:",
     "option_a": "in the caudate nucleus",
     "option_b": "Loss of dopaminergic neurons in the substantia nigra",
-    "option_c": "Overproduction of gamma-amino butyric acid (GAB",
+    "option_c": "Overproduction of gamma-amino butyric acid (GABA)",
     "option_d": "Overproduction of dopamine in the basal ganglia",
     "correct_option": "B",
     "explanation": "Parkinson's disease is associated with loss of dopaminergic neurons in the substantia nigra."
   },
   {
     "question_text": "Which disorder is least associated with a higher incidence of depression?",
-    "option_a": "Alzheimer's disease (A",
+    "option_a": "Alzheimer's disease (AD)",
     "option_b": "Parkinson's disease",
     "option_c": "Huntington's disease",
     "option_d": "Stroke",
@@ -5952,7 +5952,7 @@ const q01 = [
     "question_text": "In a patient with symptoms of a stroke, which of the following is the first-line diagnostic radiological test?",
     "option_a": "of the head",
     "option_b": "Carotid Dopplers",
-    "option_c": "Magnetic resonance angiogram (MR",
+    "option_c": "Magnetic resonance angiogram (MRA)",
     "option_d": "CT brain without contrast",
     "correct_option": "D",
     "explanation": "Noncontrast CT of the brain is the first-line diagnostic radiological test done in a patient with symptoms of stroke, and is done to rule out an intracranial bleed. CT of the head is the first test done because it may help determine treatment, as a patient with an intracranial bleed would not be a candidate for tissue plasminogen activator."
@@ -6372,7 +6372,7 @@ const q01 = [
     "explanation": "In SCI, there is a disparity between bone formation and resorption. This results in a greater risk of fractures from osteoporosis, hypercalcemia, and hypercalciuria. Hypercalcemia is seen most often with recent injury, male gender, complete injury, tetraplegia, dehydration, and immobilization. Chronic SCI patients may develop vitamin D defi ciency, which requires supplementation. Restricting calcium intake is not recommended. Treatment includes bisphosphonates, intravenous fluids, or calcitonin. Functional electrical stimulation and weight bearing may decrease bone loss."
   },
   {
-    "question_text": "In the American Spinal Injury Association (ASI",
+    "question_text": "In the American Spinal Injury Association (ASIA) exam, which dermatome level corresponds to the nipple?",
     "option_a": "T4",
     "option_b": "T10",
     "option_c": "T6",
@@ -6453,7 +6453,7 @@ const q01 = [
     "explanation": "The risk of HO is greater in complete spinal cord injuries, older individuals, in the presence of spasticity, and in patients with pressure injuries. No relationship has been shown with gender, race, level, or cause of injury."
   },
   {
-    "question_text": "In the American Spinal Injury Association (ASI",
+    "question_text": "In the American Spinal Injury Association (ASIA) exam, which key muscle group corresponds to the C7 myotome?",
     "option_a": "Elbow flexors",
     "option_b": "Long finger flexors",
     "option_c": "Elbow extensors",
@@ -6534,7 +6534,7 @@ const q01 = [
     "explanation": "HO is the formation of true bone in ectopic sites that restricts range of motion. HO can present with swelling, fever, limited mobility, or pain. Ninety percent of the time, in spinal cord-injured patients, it occurs in the hips. Serum alkaline phosphatase will be elevated, but is not a specifi c measure and levels gradually diminish with maturation. HO may not be visible on plain films in the acute phase, but will be seen on bone scan. Treatment includes gentle ranging exercises, etidronate, and rarely radiation therapy. Surgical resection can be considered in severe cases after maturation."
   },
   {
-    "question_text": "In the American Spinal Injury Association (ASI",
+    "question_text": "In the American Spinal Injury Association (ASIA) exam, which key muscle group corresponds to the C5 myotome?",
     "option_a": "Elbow extensors",
     "option_b": "Finger abductors",
     "option_c": "Wrist extensors",
@@ -6678,7 +6678,7 @@ const q01 = [
     "explanation": "The ZPP is defi ned as the most caudal dermatomes and myotomes below the sensory and motor levels that remain partially innervated. It is classifi ed only in complete injuries. The motor ZPP does not follow the sensory ZPP. In the scoring sheet, enter the motor or sensory level if there are no segments below and \"N/A\" for incomplete injuries. To calculate the length, count the number of levels from the sensory or motor level to the ZPP level."
   },
   {
-    "question_text": "An individual with T4 American Spinal Injury Association (ASI",
+    "question_text": "An individual with T4 American Spinal Injury Association (ASIA)",
     "option_a": "Sit the person up and loosen any clothing",
     "option_b": "Catheterize the individual",
     "option_c": "Perform fecal disimpaction",
@@ -6714,7 +6714,7 @@ const q01 = [
     "explanation": "Central cord syndrome is the most common of the incomplete spinal cord lesions. It produces motor weakness greater in the arms than in the legs and variable sensory loss. There is sacral sensory sparing. This syndrome is due to an injury to the central part of the cervical spinal cord."
   },
   {
-    "question_text": "A 34-year-old male has a traumatic spinal cord injury and is diagnosed according to American Spinal Injury Association (ASI",
+    "question_text": "A 34-year-old male has a traumatic spinal cord injury and is diagnosed according to American Spinal Injury Association (ASIA)",
     "option_a": "Sequential compressive devices for 2 weeks along with 6 weeks of unfractionated heparin",
     "option_b": "Sequential compressive devices for 2 weeks along with 6 weeks of enoxaparin",
     "option_c": "Sequential compressive devices for 2 weeks along with 8 to 12 weeks of unfractionated heparin",
@@ -6750,7 +6750,7 @@ const q01 = [
     "explanation": "Ischemic damage often affects the anterior spinal cord more so than the posterior portion, because the posterior portion has two posterior spinal arties as opposed to the ventral region, which only has one anterior spinal artery. In anterior cord syndrome, the corticospinal and spinothalamic tracts are affected while the dorsal columns are relatively spared. The anterior cord syndrome can lead to paraplegia with loss of pain and temperature sensation."
   },
   {
-    "question_text": "Which of the following are key muscles tested in the scoring of the American Spinal Injury Association (ASI",
+    "question_text": "Which of the following are key muscles tested in the scoring of the American Spinal Injury Association (ASIA)",
     "option_a": "C5-biceps, C7-triceps, T1-adductor digiti minimi, L5-quadriceps, S1-flexor hallucis longus",
     "option_b": "C5-biceps, C6-flexor carpi ulnaris, C8-flexor digitorum profundus, L3-quadriceps, L4-adductor magnus",
     "option_c": "C5-biceps, C8-flexor digitorum superfi cialis, L2-sartorius, L3-quadriceps, L5-biceps femoris",
@@ -6822,7 +6822,7 @@ const q01 = [
     "explanation": "The posterior spinal artery, anterior spinal artery, radicular arteries, and artery of Adamkiewitz supply blood to the spinal cord. The posterior spinal arteries branch from the vertebral arteries and travel along the posterior surface of the spinal cord to supply the posterior 1/3 of the spinal cord. Two anterior spinal arteries that also branch from the vertebral arteries unite to travel along the anterior surface supplying the anterior 2/3 of the spinal cord. The artery of Adamkiewitz normally travels on the left side of the spinal cord and divides into a small ascending and larger descending branch. The artery of Adamkiewitz normally ends around L2."
   },
   {
-    "question_text": "A spinal cord-injured patient was noted to have the following on physical examination: motor preservation greater than 3 levels below the neurologic level, and greater than half the key muscles below the single neurologic level were less than 3. This would be classifi ed as an American Spinal Injury Association (ASI",
+    "question_text": "A spinal cord-injured patient was noted to have the following on physical examination: motor preservation greater than 3 levels below the neurologic level, and greater than half the key muscles below the single neurologic level were less than 3. This would be classifi ed as an American Spinal Injury Association (ASIA)",
     "option_a": "AIS A",
     "option_b": "AIS B",
     "option_c": "AIS C",
@@ -6894,7 +6894,7 @@ const q01 = [
     "explanation": "The cauda equina syndrome refers to injury to the lumbosacral roots within the spinal canal, resulting in arefl exic bladder, bowel, weakness of lower limbs, and loss of sexual sensation. Cauda equina syndrome occurs when the nerve roots in the lumbar spine are compressed, cutting off sensation and movement. Nerve roots that control the function of the bladder and bowel are especially vulnerable to damage."
   },
   {
-    "question_text": "According to the International Standards for the Neurologic Classifi cation of Spinal Cord Injury (ISNCSCI), American Spinal Injury Association (ASI",
+    "question_text": "According to the International Standards for the Neurologic Classifi cation of Spinal Cord Injury (ISNCSCI), American Spinal Injury Association (ASIA)",
     "option_a": "Motor preservation greater than 3 levels below neurologic level, and greater than half the key muscles below the single neurologic level are less than 3",
     "option_b": "No motor function more than 3 levels below the motor level with sensory preservation including sacral sparing",
     "option_c": "Motor preservation greater than 3 levels below the neurologic level, and greater than half the key muscles below the single neurologic level are graded greater than or equal to 3",
@@ -7011,7 +7011,7 @@ const q01 = [
     "explanation": "Polio myelitis and Werdnig-Hoffmann disease (progressive infantile muscular atrophy) affect the ventral horns of the spinal cord, causing a lower motor neuron injury. These injuries result in flaccid paralysis, arefl exia, atrophy, fasciculations, and fibrillations."
   },
   {
-    "question_text": "Which of the following marks the American Spinal Injury Association (ASI",
+    "question_text": "Which of the following marks the American Spinal Injury Association (ASIA)",
     "option_a": "Lateral malleolus",
     "option_b": "Over the dorsum of the foot at the third metatarsal phalangeal (MTP) joint",
     "option_c": "Medial malleolus",
@@ -7065,7 +7065,7 @@ const q01 = [
     "explanation": "In adults, the most caudal end of the spinal cord is at the L2 level. Up through the third month of fetal life, the spinal cord occupies the whole length of the vertebral canal. After the third month, the rate of lengthening of the spinal cord is slower than the lengthening of the vertebral column."
   },
   {
-    "question_text": "In the American Spinal Injury Association (ASI",
+    "question_text": "In the American Spinal Injury Association (ASIA) exam, which dermatome level corresponds to the umbilicus?",
     "option_a": "T6",
     "option_b": "T4",
     "option_c": "T10",
@@ -7074,7 +7074,7 @@ const q01 = [
     "explanation": "The T10 dermatome includes the umbilicus. The T6 level is the xiphoid, L4 is the medial malleolus, and T4 is the nipple."
   },
   {
-    "question_text": "Which of the following conditions may lead to anterior spinal artery (AS",
+    "question_text": "Which of the following conditions may lead to anterior spinal artery (ASA)",
     "option_a": "Bilateral occlusion of vertebral arteries at their origins",
     "option_b": "Basilar artery occlusion",
     "option_c": "Occlusion of bilateral posterior spinal arteries",
@@ -7209,7 +7209,7 @@ const q01 = [
     "explanation": "Pulmonary complications, including atelectasis, pneumonia, respiratory failure, pleural complications, and pulmonary embolism, are the leading causes of death for persons with SCI in all years after SCI."
   },
   {
-    "question_text": "The International Standards of Neurological Classifi cation of Spinal Cord Injury (ISNCSCI) includes a scale of impairment called the American Spinal Injury Association (ASI",
+    "question_text": "The International Standards of Neurological Classifi cation of Spinal Cord Injury (ISNCSCI) includes a scale of impairment called the American Spinal Injury Association (ASIA)",
     "option_a": "A",
     "option_b": "B",
     "option_c": "C",
@@ -7218,7 +7218,7 @@ const q01 = [
     "explanation": "An SCI that results in the absence of any sensory or motor function in the sacral segments S4 to S5 would have an AIS category of A and be designated as complete. For an SCI where sensation is preserved in the sacral segments S4 to S5, but there is no motor function caudal to three segments below the neurological level of injury (NLI) the AIS is B, sensory incomplete. For an SCI where sensation is preserved in the sacral segments S4 to S5, but more than half the key muscles below the NLI have a muscle grade less than 3/5, the AIS is C. For an SCI where sensation is preserved in the sacral segments S4 to S5, but at least half the key muscles below the NLI have a muscle grade greater than or equal to 3/5, the AIS is D. When sensory and motor function is normal, the AIS is E. AIS categories B through E designate incomplete injuries."
   },
   {
-    "question_text": "The American Spinal Injury Association (ASI",
+    "question_text": "The American Spinal Injury Association (ASIA)",
     "option_a": "Sensory testing via dermatomes and strength testing via 10 myotomes",
     "option_b": "Strength testing via 10 myotomes and refl ex testing of upper and lower extremities",
     "option_c": "Sensory testing via dermatomes and refl ex testing of upper and lower extremities",
@@ -7281,7 +7281,7 @@ const q01 = [
     "explanation": "The motor level of injury is defi ned as the lowest key muscle that has a grade of at least 3, provided the key muscles above that level are graded as 5. The sensory level of injury is the most caudal dermatome to have normal (score of 2) sensation for both pinprick and light touch. The ASIA Classifi cation System is as follows (please see the ASIA Drawing and Chart information on page 216): A = Motor and sensory complete-no sacral sparing including pin prick (PP) or light touch (LT) at any of the S4-5 dermatomes B = Sensory incomplete C = Motor incomplete-defi ned as 1) Sacral sparing of motor function (anal contraction) 2) Sacral sparing of sensation with motor function present in more than three levels below the motor level on either side (may include non-key muscles) Less than half of muscles 3/5 or greater below the motor level of injury D = Motor incomplete-as ASIA C with more than half 3/5 of greater E = Neurologically intact"
   },
   {
-    "question_text": "A patient sustains a spinal cord injury with the following motor examination: C5-5/5 bilateral C6-5/5 bilateral C7-3/5 bilateral C8-2/5 bilateral T1-2/5 bilateral L1-1/5 bilateral L2-1/5 bilateral L3-1/5 bilateral L4-0/5 bilateral L5-0/5 bilateral Sensation-Intact to pinprick and light touch to the armpit; impaired (1/2) from armpit to rectum with pinprick and light touch sparing at S4 to S5 and rectal tone. What is the American Spinal Injury Association (ASI",
+    "question_text": "A patient sustains a spinal cord injury with the following motor examination: C5-5/5 bilateral C6-5/5 bilateral C7-3/5 bilateral C8-2/5 bilateral T1-2/5 bilateral L1-1/5 bilateral L2-1/5 bilateral L3-1/5 bilateral L4-0/5 bilateral L5-0/5 bilateral Sensation-Intact to pinprick and light touch to the armpit; impaired (1/2) from armpit to rectum with pinprick and light touch sparing at S4 to S5 and rectal tone. What is the American Spinal Injury Association (ASIA)",
     "option_a": "AIS A",
     "option_b": "AIS B",
     "option_c": "AIS C",
@@ -7328,7 +7328,7 @@ const q01 = [
   {
     "question_text": "What is the most prevalent lung disease in adults living in the United States?",
     "option_a": "Asthma",
-    "option_b": "Chronic obstructive pulmonary disease (COP",
+    "option_b": "Chronic obstructive pulmonary disease (COPD)",
     "option_c": "Cystic fibrosis",
     "option_d": "Sarcoidosis",
     "correct_option": "B",
@@ -7353,7 +7353,7 @@ const q01 = [
     "explanation": "The gold standard for diagnosing sleep apnea is an overnight polysomnography (PSG, or \"sleep study\"). Such studies are typically performed in the outpatient setting under the observation of a qualifi ed technician. Indications for such a study include excessive daytime sleepiness, titration of continuous positive airway pressure (CPAP) therapy, unexplained pulmonary hypertension (HTN), or poorly controlled HTN, among others. PSG monitors sleep stages by monitoring an electroencephalograph, an electrooculography, respiratory flow/effort, oxyhemoglobin saturation, an electrocardiogram, and body position. PSG results will help to categorize central from obstructive sleep apnea."
   },
   {
-    "question_text": "During an acute episode of dyspnea in chronic obstructive pulmonary disease (COP",
+    "question_text": "During an acute episode of dyspnea in chronic obstructive pulmonary disease (COPD)",
     "option_a": "Controlled cough",
     "option_b": "Huffi ng",
     "option_c": "Pursed-lip breathing",
@@ -7606,10 +7606,10 @@ const q01 = [
   },
   {
     "question_text": "Central chemoreceptors of respiratory regulation are sensitive to which of the following levels?",
-    "option_a": "and (",
+    "option_a": "pH",
     "option_b": "PO2",
-    "option_c": "",
-    "option_d": "Both (",
+    "option_c": "CO2",
+    "option_d": "Both (A) and (C)",
     "correct_option": "D",
     "explanation": "Central chemoreceptors in the medulla are sensitive to, both, changes in pH and rising CO2 levels within the cerebrospinal fluid of the fourth ventricle. There are peripheral chemoreceptors as well, which are sensitive to pH, pCO2, and pO2 levels. Such receptors are located in the aortic arch as well as the carotid bodies."
   },
@@ -7696,9 +7696,9 @@ const q01 = [
   },
   {
     "question_text": "The maximum volume of air that a patient can hold with a closed glottis is called:",
-    "option_a": "Vital capacity (V",
-    "option_b": "",
-    "option_c": "",
+    "option_a": "Vital capacity (VC)",
+    "option_b": "Total lung capacity (TLC)",
+    "option_c": "Maximum insufflation capacity (MIC)",
     "option_d": "Intermittent positive pressure ventilation (IPPV)",
     "correct_option": "C",
     "explanation": "The MIC is the largest volume of air that can be held by a patient against a closed glottis. The MIC is achieved by \"air stacking\" consecutively delivered volumes of air that are delivered by an external resuscitator or volume ventilator with a nasal piece or mouthpiece interface. Determining the MIC has been used in tracking therapies for patients with neuromuscular disease who have compromised inspiratory and expiratory muscle strength. Owing to their impaired ability to fully expand the lungs secondary to weakness, there is a decline in lung compliance. If a patient can maintain an MIC greater than his or her VC through air stacking techniques, he or she may be able to forgo the need for a tracheostomy and be maintained on noninvasive ventilatory support alone, assuming that there is no bulbar weakness."
@@ -7713,7 +7713,7 @@ const q01 = [
     "explanation": "Sarcoidosis is a systemic disease characterized by noncaseating epithelioid granulomas containing giant cells. It is systemic, but commonly affects the lungs and lymph tissue. The most common presenting symptoms are cough and dyspnea. This condition occurs most commonly among adults aged 20 to 40 years and is slightly higher among women than men."
   },
   {
-    "question_text": "According to the Global Initiative for Chronic Obstructive Lung Disease (GOL",
+    "question_text": "According to the Global Initiative for Chronic Obstructive Lung Disease (GOLD)",
     "option_a": "Stage 1",
     "option_b": "Stage 2",
     "option_c": "Stage 3",
@@ -7804,8 +7804,8 @@ const q01 = [
   },
   {
     "question_text": "The amount of gas moving in and out of the lungs during resting respiration is called:",
-    "option_a": "Vital capacity (V",
-    "option_b": "Total lung capacity (TL",
+    "option_a": "Vital capacity (VC)",
+    "option_b": "Total lung capacity (TLC)",
     "option_c": "Tidal volume",
     "option_d": "Forced vital capacity (FVC)",
     "correct_option": "C",
@@ -7921,8 +7921,8 @@ const q01 = [
   },
   {
     "question_text": "The volume of gas in the lungs at the end of normal expiration is called:",
-    "option_a": "Functional residual capacity (FR",
-    "option_b": "Vital capacity (V",
+    "option_a": "Functional residual capacity (FRC)",
+    "option_b": "Vital capacity (VC)",
     "option_c": "Residual volume (RV)",
     "option_d": "Expiratory reserve volume (ERV)",
     "correct_option": "A",
@@ -8038,10 +8038,10 @@ const q01 = [
   },
   {
     "question_text": "What is the term for the volume of gas in the lungs at maximal inspiration?",
-    "option_a": "Functional residual capacity (FR",
-    "option_b": "Vital capacity (V",
-    "option_c": "",
-    "option_d": "Total lung capacity (TL",
+    "option_a": "Functional residual capacity (FRC)",
+    "option_b": "Vital capacity (VC)",
+    "option_c": "Residual volume (RV)",
+    "option_d": "Total lung capacity (TLC)",
     "correct_option": "D",
     "explanation": "TLC is achieved after maximal effort of the muscles of inspiration to expand the lungs. The FRC is the volume of air remaining at the end of a normal exhalation. The RV is the volume remaining in the lungs after maximal exhalation. VC represents the volume of air that can be exhaled after maximal inspiration."
   },
@@ -8283,15 +8283,15 @@ const q01 = [
     "question_text": "Which of the following is most useful in diagnosing obstructive lung disease?",
     "option_a": "Maximal static expiratory pressure (PE max)",
     "option_b": "Diffusing capacity for carbon dioxide",
-    "option_c": "",
+    "option_c": "Forced expiratory volume in 1 second (FEV1)",
     "option_d": "Ratio of the forced expiratory volume in 1 second to FVC (FEV1/FVC)",
     "correct_option": "D",
     "explanation": "The FVC is the volume of air that can be maximally and forcibly exhaled from the lungs after having taken in the deepest breath possible. FEV1 represents the volume of air forcibly exhaled in the first second of forced exhalation. The FEV1/FVC expresses the volume of FVC expelled in the first second as a ratio of the total FVC."
   },
   {
     "question_text": "Temporary bronchial narrowing induced typically by 15 minutes of strenuous activity is likely:",
-    "option_a": "",
-    "option_b": "Exercise-induced asthma (EI",
+    "option_a": "Vocal cord dysfunction (VCD)",
+    "option_b": "Exercise-induced asthma (EIA)",
     "option_c": "Duchenne muscular dystrophy",
     "option_d": "Chronic obstructive pulmonary disease (COPD)",
     "correct_option": "B",
@@ -8388,7 +8388,7 @@ const q01 = [
     "explanation": "The maintenance phase, also known as phase 4 of cardiac rehabilitation, focuses on maintaining the goals met during the initial phases of rehabilitation by incorporating a home exercise program and continuing risk factor management. Initial gains made during the first three rehabilitation phases may decrease with time if the patient does not continue with exercises to maintain conditioning."
   },
   {
-    "question_text": "What risk factor is associated with most cases of chronic obstructive pulmonary disease (COP",
+    "question_text": "What risk factor is associated with most cases of chronic obstructive pulmonary disease (COPD)",
     "option_a": "Chronic asthma",
     "option_b": "Pneumonia",
     "option_c": "Smoking",
@@ -8750,7 +8750,7 @@ const q01 = [
   {
     "question_text": "Lymphedema is best treated with:",
     "option_a": "Diuretics",
-    "option_b": "Manual lymphatic drainage (ML",
+    "option_b": "Manual lymphatic drainage (MLD)",
     "option_c": "Antibiotics",
     "option_d": "Dangling the limb to improve drainage",
     "correct_option": "B",
@@ -8794,9 +8794,9 @@ const q01 = [
   },
   {
     "question_text": "The spine is considered unstable when there is tumor involvement of the:",
-    "option_a": "or (",
-    "option_b": "",
-    "option_c": "Either (",
+    "option_a": "The middle column",
+    "option_b": "The posterior column",
+    "option_c": "Either (A) or (B)",
     "option_d": "The anterior column",
     "correct_option": "C",
     "explanation": "When assessing spine stability, the spine can be divided into three columns. The anterior column consists of anterior longitudinal ligament, anterior annulus, and anterior 2/3 of vertebral body. The middle column consists of the posterior 1/3 of the vertebral body, posterior annulus, and posterior longitudinal ligament. The posterior column consists of the pedicles, facets, lamina, spinous process, and posterior ligaments. The spine is considered stable if only one column is affected, unless it is the middle column. It is considered unstable if two or more columns are involved. It is also considered unstable if there is a 20\u00b0 or greater angulation. The spine stability system was developed for the traumatic spine. However, the issues are more complex in cancer. Metastatic bone disease is a dynamic disease, with both mechanical and chemical forces acting on the bone."
@@ -9036,7 +9036,7 @@ const q01 = [
     "explanation": "Up to 60% of chronic cancer patients will experience pain. The most common cause of pain in cancer patients is compression of the tumor onto bones, nerves, spinal cord, and other internal organs."
   },
   {
-    "question_text": "Which of the following treatments is most effective in improving dyspnea in chronic obstructive pulmonary disease (COP",
+    "question_text": "Which of the following treatments is most effective in improving dyspnea in chronic obstructive pulmonary disease (COPD)",
     "option_a": "Short-duration high-intensity training",
     "option_b": "Long-duration mild-intensity training",
     "option_c": "Inspiratory muscle training",
@@ -9468,11 +9468,11 @@ const q01 = [
     "explanation": "The Jewett brace applies pressure to the manubrium, midback, and pubic symphysis, which allows for extension, but limits flexion."
   },
   {
-    "question_text": "Which of the following assistive devices would be most appropriate for a patient with Parkinson's disease? (",
-    "option_a": "(",
-    "option_b": "(",
-    "option_c": "(",
-    "option_d": "",
+    "question_text": "Which of the following assistive devices would be most appropriate for a patient with Parkinson's disease?",
+    "option_a": "Standard walker",
+    "option_b": "Rolling walker",
+    "option_c": "A pair of crutches",
+    "option_d": "Quad cane (narrow-based)",
     "correct_option": "B",
     "explanation": "A rolling walker would be the most appropriate assistive device from the answer choices. Answer choice (A) is a standard walker, answer choice (C) is a pair of crutches, and answer choice (D) is a quad cane (narrow-based). Bradykinesia is a hallmark finding in Parkinson's disease. Affected individuals have diffi culty initiating first steps making a rolling walker advantageous versus a standard walker. A standard walker must be picked up after a completed step before taking a new step. This restarts the initiation of first steps, which is already a diffi cult task. A rolling walker facilitates walking without having to lift up the walker in between steps along with providing the necessary stability."
   },
@@ -9739,9 +9739,9 @@ const q01 = [
   },
   {
     "question_text": "What is the best type of medication for the treatment of phantom pain?",
-    "option_a": "",
+    "option_a": "Opioid analgesic",
     "option_b": "Selective serotonin reuptake inhibitor (SSRI)",
-    "option_c": "Tricyclic antidepressant (TC",
+    "option_c": "Tricyclic antidepressant (TCA)",
     "option_d": "Acetaminophen",
     "correct_option": "C",
     "explanation": "Phantom pain is best treated with low dose TCA taken orally. Patients can be started on nortriptyline or amitriptyline 10 to 25 mg every night at bedtime."
@@ -10549,8 +10549,8 @@ const q01 = [
   },
   {
     "question_text": "What tendons are affected by de Quervain's synovitis?",
-    "option_a": "Extensor carpi radialis longus (ECRL) and extensor carpi radialis brevis (ECR",
-    "option_b": "",
+    "option_a": "Extensor carpi radialis longus (ECRL) and extensor carpi radialis brevis (ECRB)",
+    "option_b": "Abductor pollicis longus (APL) and extensor pollicis brevis (EPB)",
     "option_c": "Extensor pollicis longus (EPL) and EPB",
     "option_d": "Extensor digiti minimi (EDM) and extensor carpi ulnaris (ECU)",
     "correct_option": "B",
@@ -10621,9 +10621,9 @@ const q01 = [
   },
   {
     "question_text": "Which of the following is an acute phase protein seen in response to tissue injury?",
-    "option_a": "",
+    "option_a": "Rheumatoid factor (RF)",
     "option_b": "C-reactive protein (CRP)",
-    "option_c": "Cytoplasmic antineutrophil cytoplasmic antibodies (C-ANC",
+    "option_c": "Cytoplasmic antineutrophil cytoplasmic antibodies (C-ANCA)",
     "option_d": "Anticentromere",
     "correct_option": "B",
     "explanation": "CRP is an acute phase reactant that plays a role in host defense with both infl ammatory and anti-infl ammatory actions. Serum CRP levels increase within 4 to 6 hours and normalize in 7 days."
@@ -10684,9 +10684,9 @@ const q01 = [
   },
   {
     "question_text": "Which of the following antibodies is tested in patients suspected of having systemic lupus erythematosus (SLE)?",
-    "option_a": "",
+    "option_a": "Antinuclear antibody (ANA)",
     "option_b": "Antigliadin",
-    "option_c": "Perinuclear antineutrophil cytoplasmic antibodies (P-ANC",
+    "option_c": "Perinuclear antineutrophil cytoplasmic antibodies (P-ANCA)",
     "option_d": "Anti-Smith",
     "correct_option": "D",
     "explanation": "SLE is a chronic infl ammatory disorder involving multiple organs of the body, including skin, lungs, kidneys, and joints. Antibody testing for SLE usually includes antinuclear antibodies (ANA), antiphospholipid, anti-double stranded DNA, and anti-Smith antibodies. Complement levels C3 and C4 are monitored for response to therapy."
@@ -10981,7 +10981,7 @@ const q01 = [
   },
   {
     "question_text": "Which of the following synovial fluid laboratory values is not consistent with an infl ammatory arthritis?",
-    "option_a": "White blood cell (WB",
+    "option_a": "White blood cell (WBC)",
     "option_b": "70% polymorphonuclear leukocytes",
     "option_c": "Decreased erythrocyte sedimentation rate (ESR)",
     "option_d": "Low viscosity",
@@ -11025,7 +11025,7 @@ const q01 = [
     "explanation": "A swan-neck deformity can be seen in the hands of rheumatoid arthritis patients and is a hyperextension of the PIP with flexion of the DIP. There is also flexion at the metacarpophalangeal joint (MCP). It is caused by chronic infl ammation at the PIP, which causes a stretch of the volar plate. The PIP joint then moves into hyperextension. At the DIP, there is elongation or rupture of the extensor hood at the base of the phalanx."
   },
   {
-    "question_text": "A reasonable first-line of treatment in osteoarthritis (O",
+    "question_text": "A reasonable first-line of treatment in osteoarthritis (OA)",
     "option_a": "Intra-articular injections",
     "option_b": "Oral steroids",
     "option_c": "Acetaminophen and/or nonsteroidal anti-infl ammatory drugs (NSAIDs)",
@@ -11052,7 +11052,7 @@ const q01 = [
     "explanation": "In rheumatoid arthritis, it is important to rest the involved joints. Heavy exercise of the involved joints is contraindicated as it could cause more damage. Other important rehabilitation measures include modifi cation of activities that stress the joints, joint protection, work simplifi cation instructions, splinting regimens, heat modalities followed by active range of motion exercise, and resistive exercise."
   },
   {
-    "question_text": "What is the most serious complication of osteoarthritis (O",
+    "question_text": "What is the most serious complication of osteoarthritis (OA)",
     "option_a": "Radiculopathy",
     "option_b": "Myelopathy",
     "option_c": "Osteoporosis",
@@ -11080,9 +11080,9 @@ const q01 = [
   },
   {
     "question_text": "Symmetric erosive destruction of multiple joints is more likely to be seen in which of the following arthropathies?",
-    "option_a": "",
+    "option_a": "Osteoarthritis (OA)",
     "option_b": "Reactive arthritis",
-    "option_c": "Rheumatoid arthritis (R",
+    "option_c": "Rheumatoid arthritis (RA)",
     "option_d": "Gout",
     "correct_option": "C",
     "explanation": "RA usually presents as morning stiffness in multiple joints. RA is caused by autoimmune destruction of unknown etiology. Current American College of Rheumatology criteria for rheumatoid arthritis include morning stiffness lasting for at least 1 hour, involvement of three or more joints, involvement of at least one joint in the hand, symmetric involvement of joints, rheumatoid nodules, positive rheumatoid factor, and radiographic evidence of erosions or decalcifi cation of joints. At least four of the seven criteria must be met for diagnosis."
@@ -11178,7 +11178,7 @@ const q01 = [
     "explanation": "Pannus is a tissue derived from synovial membrane that causes destruction of cartilage and bone. Multinucleated cells with osteoclastic characteristics have been identifi ed in the pannusbone interface. This destruction can lead to instability of joints and eventual fibrosis, becoming the leading cause of morbidity in patients with rheumatoid arthritis."
   },
   {
-    "question_text": "All of the following are common in idiopathic osteoarthritis (O",
+    "question_text": "All of the following are common in idiopathic osteoarthritis (OA) EXCEPT:",
     "option_a": "Age is over 50 years",
     "option_b": "Bony tenderness",
     "option_c": "Stiffness",
@@ -11187,7 +11187,7 @@ const q01 = [
     "explanation": "OA is not associated with an elevated erythrocyte sedimentation rate as there is no infl ammatory response. It is commonly characterized as \"wear and tear arthritis.\" The other choices are common in OA."
   },
   {
-    "question_text": "All of the following are common in idiopathic osteoarthritis (O",
+    "question_text": "All of the following are common in idiopathic osteoarthritis (OA) EXCEPT:",
     "option_a": "Palpable warmth",
     "option_b": "Negative rheumatoid factor (or low titer)",
     "option_c": "Bony enlargement",
@@ -11403,7 +11403,7 @@ const q01 = [
     "explanation": "A reduction of 2 BMI units over a 10-year period in females with a BMI above the median BMI can decrease the chances of developing osteoarthritis by over 50%."
   },
   {
-    "question_text": "Ankylosing spondylitis is associated with which of the following human leukocyte antigen (HL",
+    "question_text": "Ankylosing spondylitis is associated with which of the following human leukocyte antigen (HLA)",
     "option_a": "HLA-B47",
     "option_b": "HLA-B27",
     "option_c": "HLA-DR4",
@@ -11547,7 +11547,7 @@ const q01 = [
     "explanation": "Collagenous fibers are the most abundant of the connective tissue fibers and are found in vessels, cartilage, gut, skin, bone, tendons, and ligaments. Elastic fibers form the extracellular matrix and can stretch up to 1.5 times their length. Reticular fibers provide a framework and are found in the liver, marrow, and lymphatic organs."
   },
   {
-    "question_text": "Which of the following medications is not approved by the U.S. Food and Drug Administration (FD",
+    "question_text": "Which of the following medications is not approved by the U.S. Food and Drug Administration (FDA)",
     "option_a": "Milnacipran",
     "option_b": "Pregabalin",
     "option_c": "Duloxetine",
@@ -12295,9 +12295,9 @@ const q01 = [
   },
   {
     "question_text": "Which of the following is a form of insurance providing wage replacement and medical benefi ts to employees injured in the course of employment in exchange for mandatory relinquishment of the employee's right to sue?",
-    "option_a": "",
+    "option_a": "Workers' compensation",
     "option_b": "Tort reform",
-    "option_c": "Health Insurance Portability and Accountability Act (HIPA",
+    "option_c": "Health Insurance Portability and Accountability Act (HIPAA)",
     "option_d": "Americans With Disabilities Act",
     "correct_option": "A",
     "explanation": "Workers' compensation is a form of insurance providing wage replacement and medical benefi ts to employees injured in the course of employment in exchange for mandatory relinquishment of the employee's right to sue the employer."
@@ -12330,7 +12330,7 @@ const q01 = [
     "explanation": "Although laws vary from state to state, most have enacted statutes mandating the reporting of suspected elder abuse. Types of elder abuse may include physical, emotional, neglect, verbal, and financial. The elderly population often underreports cases of abuse."
   },
   {
-    "question_text": "A well-known pharmaceutical company has developed a new pain medication and approaches your practice to take part in clinical research. The study has received Institutional Review Board (IR",
+    "question_text": "A well-known pharmaceutical company has developed a new pain medication and approaches your practice to take part in clinical research. The study has received Institutional Review Board (IRB)",
     "option_a": "Disclosing any confl icts of interest",
     "option_b": "Answering any questions prospective participants may have",
     "option_c": "Determination of capacity",
@@ -12340,8 +12340,8 @@ const q01 = [
   },
   {
     "question_text": "Which act allows eligible employees of covered employers to take unpaid, job-protected leave for specifi ed family and medical reasons with continuation of group health insurance coverage under the same terms and conditions as if the employee had not taken leave?",
-    "option_a": "",
-    "option_b": "Family Medical Leave Act (FML",
+    "option_a": "Consolidated Omnibus Budget Reconciliation Act (COBRA)",
+    "option_b": "Family Medical Leave Act (FMLA)",
     "option_c": "Maternity Leave Act",
     "option_d": "Stark Law",
     "correct_option": "B",
@@ -12429,7 +12429,7 @@ const q01 = [
     "explanation": "Double effect is an action that produces two consequences, one positive and one negative. One example is giving morphine to a terminally ill patient. Morphine can have a positive effect in that it improves pain but it can negatively impact the respiratory system."
   },
   {
-    "question_text": "The Americans with Disabilities Act (AD",
+    "question_text": "The Americans with Disabilities Act (ADA)",
     "option_a": "Education and employment opportunities",
     "option_b": "Employment, public accommodations/transportation, state/government services, telecommunications",
     "option_c": "Medical and legal services",
@@ -12476,7 +12476,7 @@ const q01 = [
   {
     "question_text": "Which of the following is a unique 10-digit identifi cation number issued to health care providers by Centers for Medicare and Medicaid Services (CMS)?",
     "option_a": "number",
-    "option_b": "Drug enforcement agency (DE",
+    "option_b": "Drug enforcement agency (DEA)",
     "option_c": "National provider identifi cation (NPI) number",
     "option_d": "State license number",
     "correct_option": "C",
@@ -12529,9 +12529,9 @@ const q01 = [
   },
   {
     "question_text": "The degree to which a patient follows medical advice is best described as:",
-    "option_a": "",
+    "option_a": "Informed consent",
     "option_b": "Good Samaritan Law",
-    "option_c": "Health Insurance Portability and Accountability Act (HIPA",
+    "option_c": "Health Insurance Portability and Accountability Act (HIPAA)",
     "option_d": "Compliance",
     "correct_option": "D",
     "explanation": "Compliance is the degree to which a patient follows medical advice."
@@ -12546,7 +12546,7 @@ const q01 = [
     "explanation": "Palliative care goals include comfort of the patient and improving quality of life."
   },
   {
-    "question_text": "The Individuals With Disabilities Education Act (IDE",
+    "question_text": "The Individuals With Disabilities Education Act (IDEA)",
     "option_a": "A mechanism to diagnose pediatric functional disorders",
     "option_b": "Provision of assistive technology services to school-aged children with disabilities who require them for their continued education",
     "option_c": "Provision of transportation to and from school for children with disabilities",
@@ -12583,16 +12583,16 @@ const q01 = [
   },
   {
     "question_text": "Which of the following describes ending a physician-patient relationship when a patient is in need of treatment, without making certain they have continuing care?",
-    "option_a": "",
+    "option_a": "Abandonment",
     "option_b": "Good Samaritan Law",
-    "option_c": "Health Insurance Portability and Accountability Act (HIPA",
+    "option_c": "Health Insurance Portability and Accountability Act (HIPAA)",
     "option_d": "Compliance",
     "correct_option": "A",
     "explanation": "Abandonment is best described as ending a physician-patient relationship when a patient is in need of treatment, without making certain they have continuing care."
   },
   {
     "question_text": "Which of the following best describes the use of an appointed agent to make medical decisions in case the patient is unable to?",
-    "option_a": "",
+    "option_a": "Power of attorney",
     "option_b": "Health care proxy",
     "option_c": "Living will",
     "option_d": "Palliative care",
@@ -12601,7 +12601,7 @@ const q01 = [
   },
   {
     "question_text": "Which of the following legislative acts prohibits discrimination based on disability?",
-    "option_a": "",
+    "option_a": "Americans with Disabilities Act (ADA)",
     "option_b": "The Rehabilitation and Disability Amendment",
     "option_c": "The Federal Equality Bill",
     "option_d": "Justice in Employment Act",
@@ -12637,16 +12637,16 @@ const q01 = [
   },
   {
     "question_text": "Which of the following is best described as protection for the physician from civil punishment in an emergency?",
-    "option_a": "",
+    "option_a": "Malpractice insurance",
     "option_b": "Good Samaritan Law",
-    "option_c": "Health Insurance Portability and Accountability Act (HIPA",
+    "option_c": "Health Insurance Portability and Accountability Act (HIPAA)",
     "option_d": "Compliance",
     "correct_option": "B",
     "explanation": "The Good Samaritan Law protects physicians from civil punishment when acting in an emergency situation. Emergency situations are defi ned differently by each respective state."
   },
   {
     "question_text": "Which of the following conveys your preferences regarding medical care intended to sustain life?",
-    "option_a": "",
+    "option_a": "Do-not-resuscitate (DNR) order",
     "option_b": "Health care proxy",
     "option_c": "Living will",
     "option_d": "Palliative care",
@@ -12719,7 +12719,7 @@ const q01 = [
   {
     "question_text": "Which of the following diagnoses is not compliant with Medicare's guidelines for medical conditions that require intensive acute rehabilitation services?",
     "option_a": "87-year-old woman with a total hip replacement",
-    "option_b": "70-year-old man with coronary artery disease (CA",
+    "option_b": "70-year-old man with coronary artery disease (CAD)",
     "option_c": "60-year-old man with polyneuropathy on electrodiagnosis (EMG)",
     "option_d": "55-year-old woman with femur fracture after a fall",
     "correct_option": "B",
@@ -12817,9 +12817,9 @@ const q01 = [
   },
   {
     "question_text": "Which of the following is an example of incentives provided by the government for industries that comply with the American With Disabilities Act?",
-    "option_a": "and (",
-    "option_b": "",
-    "option_c": "Both (",
+    "option_a": "Tax deduction under the Revenue Reconciliation Act of 1990",
+    "option_b": "Targeted Jobs Tax Credit",
+    "option_c": "Both (A) and (B)",
     "option_d": "None of the above",
     "correct_option": "C",
     "explanation": "The Revenue Reconciliation Act of 1990 allows businesses to deduct a set amount of expenses used for making the workplace accessible for disabled individuals. The Targeted Jobs Tax Credit of 1978 allows a tax credit for companies that employ individuals with disabilities (for 1 year)."
@@ -12870,7 +12870,7 @@ const q01 = [
     "explanation": "Botulism is due to toxins produced by Clostridium botulinum. These toxins block the release of acetylcholine at the neuromuscular junction."
   },
   {
-    "question_text": "An 8-year-old with a diagnosis of Duchenne muscular dystrophy (DM",
+    "question_text": "An 8-year-old with a diagnosis of Duchenne muscular dystrophy (DMD)",
     "option_a": "Swimming",
     "option_b": "Daily walking",
     "option_c": "Weight lifting",
@@ -12942,7 +12942,7 @@ const q01 = [
     "explanation": "The two most common shunt complications are infection and obstruction. Signs and symptoms vary with the age of the child."
   },
   {
-    "question_text": "Of those patients with myelomeningocele (MM",
+    "question_text": "Of those patients with myelomeningocele (MMC)",
     "option_a": "Less than 10",
     "option_b": "20",
     "option_c": "40",
@@ -12978,7 +12978,7 @@ const q01 = [
     "explanation": "Linear fracture is most common after a head injury and usually does not require neurosurgical intervention. If the fracture crosses the suture line in infants, leptomeningeal cyst can occur later in life."
   },
   {
-    "question_text": "Most children with spinal muscular atrophy (SM",
+    "question_text": "Most children with spinal muscular atrophy (SMA)",
     "option_a": "Mental retardation",
     "option_b": "A single crease across their palm",
     "option_c": "Epilepsy",
@@ -13023,7 +13023,7 @@ const q01 = [
     "explanation": "As described by Molnar, if independent sitting occurs by age 2 years, prognosis for ambulation is good. \"Will my child walk?\" is usually the most frequent question asked by the parent of a newly diagnosed child with CP."
   },
   {
-    "question_text": "The occurrence of contractures in Duchenne muscular dystrophy (DM",
+    "question_text": "The occurrence of contractures in Duchenne muscular dystrophy (DMD)",
     "option_a": "Poor nutrition",
     "option_b": "Obesity",
     "option_c": "Prolonged static positioning of the limb",
@@ -13086,7 +13086,7 @@ const q01 = [
     "explanation": "Dystrophic and infl ammatory myopathies cause highly elevated CK levels. Congenital myopathies cause mild to moderate elevations of CK."
   },
   {
-    "question_text": "In which type of spinal muscular atrophy (SM",
+    "question_text": "In which type of spinal muscular atrophy (SMA)",
     "option_a": "Type I",
     "option_b": "Type II",
     "option_c": "Type III",
@@ -13122,7 +13122,7 @@ const q01 = [
     "explanation": "Each is a characteristic type of CP except hemiballismus. Dystonia is characterized by slow rhythmic movements with tone changes generally found in the trunk and extremities, whereas the ataxic-type involves uncoordinated movements associated with nystagmus, dysmetria, and a wide-based gait. Slow writhing involuntary movements, particularly in the distal extremities, describe athetosis."
   },
   {
-    "question_text": "A physiatrist evaluating patients in a muscular dystrophy clinic wants to start the boys with Duchenne muscular dystrophy (DM",
+    "question_text": "A physiatrist evaluating patients in a muscular dystrophy clinic wants to start the boys with Duchenne muscular dystrophy (DMD)",
     "option_a": "To allow the boys to play as hard and as long as they want, stopping only when they are too tired to play any more",
     "option_b": "To have the boys exercise in a playful manner but with the supervision of a physical therapist",
     "option_c": "To have the boys participate in the standard school physical program",
@@ -13257,7 +13257,7 @@ const q01 = [
     "explanation": "Early identifi cation of abnormal tone and motor development may precede diagnosis, but early intervention treatment should be instituted."
   },
   {
-    "question_text": "What is the incidence of myelomeningocele (MM",
+    "question_text": "What is the incidence of myelomeningocele (MMC)",
     "option_a": "2 per 1,000 live births",
     "option_b": "20 per 1,000 live births",
     "option_c": "100 per 1,000 live births",
@@ -13447,8 +13447,8 @@ const q01 = [
   },
   {
     "question_text": "Which of the following muscular dystrophies is usually associated with a markedly reduced lifespan?",
-    "option_a": "Facioscapulohumeral dystrophy (FSH",
-    "option_b": "Becker's muscular dystrophy (BM",
+    "option_a": "Facioscapulohumeral dystrophy (FSHD)",
+    "option_b": "Becker's muscular dystrophy (BMD)",
     "option_c": "Limb-girdle dystrophy",
     "option_d": "Duchenne muscular dystrophy (DMD)",
     "correct_option": "D",
@@ -13537,15 +13537,15 @@ const q01 = [
   },
   {
     "question_text": "What is the most common connective tissue disease seen in children?",
-    "option_a": "",
-    "option_b": "Juvenile rheumatoid arthritis (JR",
+    "option_a": "Juvenile dermatomyositis",
+    "option_b": "Juvenile rheumatoid arthritis (JRA)",
     "option_c": "Reactive arthritis",
     "option_d": "Systemic lupus erythematosus (SLE)",
     "correct_option": "B",
     "explanation": "JRA is the most common connective tissue disease in children. A diagnosis of JRA is made in the presence of arthritis lasting 6 weeks or longer with an onset earlier than 16 years of age. The incidence is 13.9 per 100,000 per year, and the etiology remains unknown."
   },
   {
-    "question_text": "Which of the following complications is common in both Duchenne muscular dystrophy (DM",
+    "question_text": "Which of the following complications is common in both Duchenne muscular dystrophy (DMD)",
     "option_a": "Cardiomyopathy",
     "option_b": "Large bowel obstruction",
     "option_c": "Ureteral refl ux",
@@ -13554,7 +13554,7 @@ const q01 = [
     "explanation": "Signifi cant cardiac involvement occurs in both DMD and BMD. Dystrophin has been localized to the membrane surface of cardiac Purkinje fibers, and defective dystrophin expression probably contributes to the cardiac conduction disturbances seen in DMD and BMD. Death has been attributed to congestive heart failure in as many as 40% of patients with DMD. The other choices are not seen in this setting. Restrictive (not obstructive) lung disease is common in DMD (and to a lesser extent in BMD) and is due to weakness of the diaphragm, chest wall, and abdominal musculature. The ureter and the large bowel, having smooth muscle, are not primarily involved in DMD or BMD."
   },
   {
-    "question_text": "Clinically, what criterion can be used to differentiate between Duchenne muscular dystrophy (DM",
+    "question_text": "Clinically, what criterion can be used to differentiate between Duchenne muscular dystrophy (DMD)",
     "option_a": "Utilization of Gower's maneuver",
     "option_b": "The ability to ambulate past the late teenage years",
     "option_c": "Pseudohypertrophy of the calves",
@@ -13644,7 +13644,7 @@ const q01 = [
     "explanation": "The palmar grasp refl ex is seen when an object is placed in the infant's hand and strokes their palm. The fingers will close and they will grasp it. It is seen initially at birth and should disappear by 6 months of age."
   },
   {
-    "question_text": "The pathophysiology of Duchenne muscular dystrophy (DM",
+    "question_text": "The pathophysiology of Duchenne muscular dystrophy (DMD)",
     "option_a": "Merosin defi ciency",
     "option_b": "Abnormally low levels of dysfertin",
     "option_c": "Absence of dystrophin",
@@ -13654,9 +13654,9 @@ const q01 = [
   },
   {
     "question_text": "The laboratory serum creatine kinase level would most likely be highest in which of the following?",
-    "option_a": "A 5-year-old boy with Becker's muscular dystrophy (BM",
+    "option_a": "A 5-year-old boy with Becker's muscular dystrophy (BMD)",
     "option_b": "A 20-year-old man with BMD",
-    "option_c": "A 5-year-old boy with Duchenne muscular dystrophy (DM",
+    "option_c": "A 5-year-old boy with Duchenne muscular dystrophy (DMD)",
     "option_d": "A 20-year-old man with DMD",
     "correct_option": "C",
     "explanation": "A normal serum creatine kinase value essentially helps to exclude either BMD or DMD. Higher creatine kinase values are noted in the early disease stages and tend to decrease over time with loss of muscle fibers. DMD children can present with a signifi cantly elevated creatine kinase value, typically in the range of 20,000 international units/liter or greater, and is usually higher than in BMD."
@@ -13680,7 +13680,7 @@ const q01 = [
     "explanation": "Intrathecal baclofen should be considered for a child with signifi cant spasticity or dystonia interfering with function and who has had an adequate trial of oral medications."
   },
   {
-    "question_text": "What percentage of those with myelomeningocele (MM",
+    "question_text": "What percentage of those with myelomeningocele (MMC)",
     "option_a": "50",
     "option_b": "25",
     "option_c": "10",
@@ -13698,7 +13698,7 @@ const q01 = [
     "explanation": "Prematurity usually causes diplegic cerebral palsy (CP), as white matter adjacent to the ventricles is affected. Stroke and congenital malformations more frequently cause hemiplegic CP. Hyperbilirubinemia causes athetoid or dystonic CP. Severe anoxia causes diffuse brain injury and hence quadriplegic CP."
   },
   {
-    "question_text": "Children with meningomyelocele (MM",
+    "question_text": "Children with meningomyelocele (MMC)",
     "option_a": "Environmental allergies",
     "option_b": "Milk intolerance",
     "option_c": "Latex allergy",
@@ -13716,7 +13716,7 @@ const q01 = [
     "explanation": "Chronic subdural hematomas and hydrocephalus can develop during the rehabilitation phase, but are not focuses of therapy."
   },
   {
-    "question_text": "Spinal cord injury without radiographic abnormalities (SCIWOR",
+    "question_text": "Spinal cord injury without radiographic abnormalities (SCIWORA)",
     "option_a": "Infants and young children",
     "option_b": "Adolescents",
     "option_c": "Adults",
@@ -13860,7 +13860,7 @@ const q01 = [
     "explanation": "The most common cause of congenital torticollis is fibrosis of the SCM."
   },
   {
-    "question_text": "Which type of spinal muscular atrophy (SM",
+    "question_text": "Which type of spinal muscular atrophy (SMA)",
     "option_a": "Type I (Werdnig-Hoffmann disease)",
     "option_b": "Type II",
     "option_c": "Type III (Kugelberg-Welander syndrome)",
@@ -14031,7 +14031,7 @@ const q01 = [
     "explanation": "Short-duration small-amplitude (SDSA) polyphasic potentials are often seen in children presenting with congenital myopathies or other neuromuscular disorders. Congenital myopathy should be in the differential of any infant presenting with hypotonia referred for EMG. Myotubular (centronuclear) myopathy is an example of a congenital myopathy most consistently presenting with abnormal spontaneous action potential activity at rest. SDSA are also present in dystrophic myopathies and polymyositis/dermatomyositis; however, muscular dystrophy can rarely present with low-density lipoprotein from fiber splitting in chronic disease. SDSA polyphasic potentials are action potentials with a dropout of muscle fibers, and are associated with myopathic diseases. Less commonly they are associated with neuromuscular junction disorders or severe neuropathic diseases. Miniature end-plate potentials represent a monophasic, single quantum version of a biphasic end-plate action potential of summated quanta, both of which can be found in either children or adults."
   },
   {
-    "question_text": "What must accompany rehabilitation in those with myelomeningocele (MM",
+    "question_text": "What must accompany rehabilitation in those with myelomeningocele (MMC)",
     "option_a": "Anticipation and prevention of life-threatening events",
     "option_b": "Rechecks as needed",
     "option_c": "Avoidance of activity",
@@ -14303,7 +14303,7 @@ const q01 = [
   {
     "question_text": "The expenses that a business might incur to comply with the provisions of the Americans with Disabilities Act in hiring a disabled worker can be partially mitigated by:",
     "option_a": "An \"access\" tax credit for eligible expenses against income taxes",
-    "option_b": "The Targeted Jobs Tax Credit (TJT",
+    "option_b": "The Targeted Jobs Tax Credit (TJTC)",
     "option_c": "Only hiring the person part-time so that the employer does not have to provide health care",
     "option_d": "The Full Employment Act",
     "correct_option": "A",
@@ -14545,8 +14545,8 @@ const q01 = [
   },
   {
     "question_text": "Which workers' compensation act was enacted in 1970/1971?",
-    "option_a": "",
-    "option_b": "The Occupational Safety and Health Act (OSH",
+    "option_a": "The Federal Employees' Compensation Act",
+    "option_b": "The Occupational Safety and Health Act (OSHA)",
     "option_c": "The Code of Hammurabi",
     "option_d": "No-fault insurance",
     "correct_option": "B",
@@ -14744,7 +14744,7 @@ const q01 = [
   {
     "question_text": "Which is not an indication for a spinal cord stimulator (SCS) implantation?",
     "option_a": "Complex regional pain syndrome (CRPS)",
-    "option_b": "Peripheral vascular disease (PV",
+    "option_b": "Peripheral vascular disease (PVD)",
     "option_c": "Nonischemic nociceptive pain",
     "option_d": "Failed back surgery syndrome (FBSS)",
     "correct_option": "C",
@@ -14888,9 +14888,9 @@ const q01 = [
   {
     "question_text": "Opioid receptors belong to the _______________ family.",
     "option_a": "receptor",
-    "option_b": "N-methyl-D-aspartate (NMD",
-    "option_c": "alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid (AMP",
-    "option_d": "gamma-aminobutyric acid (GAB",
+    "option_b": "N-methyl-D-aspartate (NMDA)",
+    "option_c": "alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid (AMPA)",
+    "option_d": "gamma-aminobutyric acid (GABA)",
     "correct_option": "A",
     "explanation": "There are three distinct opioid receptors-mu, delta, and kappa. All of these receptors belong to the G-protein-coupled receptor family, with cyclic adenosine monophosphate (cAMP) acting as an intracellular second messenger."
   },
@@ -15147,7 +15147,7 @@ const q01 = [
     "explanation": "Studies have shown that celecoxib, a selective COX-2 inhibitor, does not inhibit platelet aggregation."
   },
   {
-    "question_text": "A 75-year-old female with a recent left middle cerebral artery cerebrovascular accident (CV",
+    "question_text": "A 75-year-old female with a recent left middle cerebral artery cerebrovascular accident (CVA)",
     "option_a": "Shoulder subluxation",
     "option_b": "Complex regional pain syndrome (CRPS)",
     "option_c": "Bicipital tendonitis",
@@ -15165,7 +15165,7 @@ const q01 = [
     "explanation": "Ankylosing spondylitis is three times more common in men than in women, usually presents in the late teens, and is associated with morning stiffness and aching pain in the lower back (at times affecting the buttocks). On physical examination, one can find tenderness to palpation over the sacroiliac joints and decreased spinal mobility."
   },
   {
-    "question_text": "Symptoms associated with temporomandibular disorder (TM",
+    "question_text": "Symptoms associated with temporomandibular disorder (TMD)",
     "option_a": "Changes to vision",
     "option_b": "Unilateral pain in muscles of mastication, radiating to temples, side of face, or ear",
     "option_c": "Tinnitus or other ear symptoms",
@@ -15192,7 +15192,7 @@ const q01 = [
     "explanation": "Diabetic amyotrophy is the most common cause of focal femoral neuropathy. The onset is sudden, pain is debilitating, and patients often exhibit diffi culty with ambulation."
   },
   {
-    "question_text": "Temporomandibular disorder (TM",
+    "question_text": "Temporomandibular disorder (TMD)",
     "option_a": "Myofascial pain dysfunction",
     "option_b": "Internal derangement of the joint space",
     "option_c": "Degenerative joint disorders",
@@ -15256,7 +15256,7 @@ const q01 = [
   },
   {
     "question_text": "Amitriptyline (Elavil) is a __________ and is used to treat depression and neuropathic pain.",
-    "option_a": "",
+    "option_a": "Tricyclic antidepressant (TCA)",
     "option_b": "Benzodiazepine",
     "option_c": "Selective serotonin reuptake inhibitor (SSRI)",
     "option_d": "Serotonin-norepinephrine reuptake inhibitor (SNRI)",
@@ -15500,7 +15500,7 @@ const q01 = [
   {
     "question_text": "Methadone hydrochloride works as:",
     "option_a": "agonist",
-    "option_b": "A gamma-aminobutyric acid (GAB",
+    "option_b": "A gamma-aminobutyric acid (GABA)",
     "option_c": "An acetylcholine receptor blocker",
     "option_d": "A blocker of release of calcium from the sarcoplasmic reticulum",
     "correct_option": "A",
@@ -15525,7 +15525,7 @@ const q01 = [
     "explanation": "The best type of exercises for patients with osteoporosis is progressive resistive spinal extension exercises. Studies have shown that patients with osteoporosis have weaker back extensors than the general population. Spinal flexion exercises should be avoided, as these can aggravate compression fractures in patients with osteoporosis."
   },
   {
-    "question_text": "Which pharmacologic intervention is most appropriate for the treatment of neuropathic pain in a T6 American Spinal Injury Association (ASI",
+    "question_text": "Which pharmacologic intervention is most appropriate for the treatment of neuropathic pain in a T6 American Spinal Injury Association (ASIA)",
     "option_a": "Amitriptyline (Elavil)",
     "option_b": "Fluoxetine (Prozac)",
     "option_c": "Gabapentin (Neurontin)",
@@ -15831,7 +15831,7 @@ const q01 = [
     "explanation": "Both the peroneus brevis and peroneus longus can be visualized posterior to the lateral malleolus. The peroneus brevis inserts onto the base of the fifth metatarsal and the peroneus longus inserts on the first metatarsal. The tibialis anterior inserts on the medial cuneiform. The tibalis posterior inserts on the navicular."
   },
   {
-    "question_text": "How are mesenchymal stem cells (MS",
+    "question_text": "How are mesenchymal stem cells (MSCs)",
     "option_a": "Hematopoietic",
     "option_b": "Nonhematopoietic",
     "option_c": "Epidermal",
@@ -16012,9 +16012,9 @@ const q01 = [
   },
   {
     "question_text": "Which of the following is used to quantify the level of growth factors released from the platelets upon activation of platelet-rich plasma?",
-    "option_a": "",
+    "option_a": "Northern blot",
     "option_b": "Western blot",
-    "option_c": "Enzyme-linked immunosorbent assay (ELIS",
+    "option_c": "Enzyme-linked immunosorbent assay (ELISA)",
     "option_d": "Sohal assay",
     "correct_option": "C",
     "explanation": "Levels of growth factors released can be quantifi ed using ELISA. The northern blot is used to identify particular mRNA sequences and the western blot is used to identify specifi c amino acid sequences in proteins. The Sohal assay does not exist."
@@ -16030,9 +16030,9 @@ const q01 = [
   },
   {
     "question_text": "What is an orthopedic indication for platelet-rich plasma (PRP)?",
-    "option_a": "and (",
-    "option_b": "",
-    "option_c": "(",
+    "option_a": "All of the above (tendinopathies, ligament sprains, muscle strains, joint injuries, intervertebral disk pathology, and fractures)",
+    "option_b": "Only for tendinopathies",
+    "option_c": "Only for muscle strains",
     "option_d": "None of the above",
     "correct_option": "A",
     "explanation": "Indications for PRP include the following: tendinopathies, ligament sprains, muscle strains, joints, intervertebral disks, and fractures."
@@ -16326,7 +16326,7 @@ const q01 = [
     "explanation": "Hemostasis is the first stage of wound healing and involves blood plasma and platelets for coagulation. Infl ammation is mediated by granulocytes, especially leukocytes, and platelets. Tissue regeneration involves growth factors that are found in alpha granules."
   },
   {
-    "question_text": "According to the International Cellular Medicine Society (ICMS) what is recommended about nonsteroidal anti-infl ammatory drug (NSAI",
+    "question_text": "According to the International Cellular Medicine Society (ICMS) what is recommended about nonsteroidal anti-infl ammatory drug (NSAID)",
     "option_a": "Take every 4 to 6 hours",
     "option_b": "Take every 12 hours",
     "option_c": "Take every 24 hours",
@@ -16425,7 +16425,7 @@ const q01 = [
     "explanation": "Prior to the infl ammation phase, the clotting cascade takes place to stop blood loss, that is, hemostasis. During the infl ammatory phase, chemokines, cytokines, growth factors, histamine, prostaglandins, and prostacyclins are released. Fibroblasts enter about 2 to 3 days after the injury, initiating the proliferative phase. The proliferative phase includes angiogenesis, granulation tissue formation, epithelialization, and contraction. The next phase is maturation and remodeling. During this phase, type I collagen replaces type III collagen that was laid down in the proliferative phase. Remodeling begins 21 days from the injury or when the collagen content of the wound is stable."
   },
   {
-    "question_text": "An elderly patient arrives in the offi ce asking for alternative options for his knee osteoarthritis (O",
+    "question_text": "An elderly patient arrives in the offi ce asking for alternative options for his knee osteoarthritis (OA)",
     "option_a": "Cartilage healing",
     "option_b": "Reducing pain",
     "option_c": "Improving function",

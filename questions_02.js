@@ -787,7 +787,7 @@ const q02 = [
     "option_d": "left hemiataxia and dysphagia",
     "correct_option": "A",
     "explanation": "The accompanying axial CT scan (see image) shows a large hypodense (dark) wedge-shaped area occupying the patient's left cerebral hemisphere (displayed on the image's right side per standard radiologic convention), consistent with a completed left middle cerebral artery (MCA) territory infarction. DeLisa's Physical Medicine and Rehabilitation Medicine: Principles and Practice (Ch. 23, stroke syndromes section) states that when the MCA is occluded at its origin, the resulting large infarction produces 'contralateral hemiplegia, decreased sensation, and homonymous hemianopia. If the dominant hemisphere is involved, aphasia is usually present, which may be severe if the entire territory of the MCA is infarcted.' Since the left hemisphere is the dominant (language) hemisphere in the large majority of people, a left MCA infarct produces right-sided hemiparesis together with aphasia -- matching option A. Left hemineglect (B) and hemiataxia/dysphagia patterns (C, D) are associated with nondominant-hemisphere or posterior-circulation/cerebellar lesions, not a dominant MCA territory infarct.\nReference: DeLisa JA, ed., et al. Physical Medicine and Rehabilitation Medicine: Principles and Practice, 5th ed. (2010), Ch. 23, p.579 (verified against the user's copy of the DeLisa textbook PDF; page differs from the original ABPMR answer key citation of p.555, which does not correspond to this topic in this edition/printing).",
-    "image": "images/abpmr/moc100_q61_ct.png",
+    "image": "images/moc100_q61_ct.png",
     "video_link": ""
   },
   {
@@ -1606,7 +1606,7 @@ const q02 = [
     "option_d": "Human immunodeficiency virus infection",
     "correct_option": "B",
     "explanation": "The image shows a progressive increment (waxing) of the CMAP with rapid, high-frequency (50 Hz) repetitive nerve stimulation -- the hallmark electrodiagnostic feature of infant botulism, reflecting the presynaptic neuromuscular blockade caused by botulinum toxin at the neuromuscular junction. A review of infant botulism electrodiagnosis describes an incremental response to high-rate repetitive nerve stimulation (with published data showing >100% increment at 20 Hz stimulation) combined with low CMAP amplitude at baseline as the classic triad supporting the diagnosis, unlike the low-frequency decrement seen in myasthenic syndromes. This pattern is distinct from spinal muscular atrophy (a lower motor neuron/anterior horn cell disease with no RNS decrement/increment), inflammatory myopathy, or HIV infection, none of which produce this presynaptic NMJ waxing pattern on fast repetitive stimulation.\nReference: Gutierrez AR et al., 'Topical Review: Electrodiagnosis of Infantile Botulism,' Journal of Child Neurology (SAGE), https://journals.sagepub.com/doi/10.1177/088307389400900404; and Chaudhry V et al., 'Stimulation single-fiber EMG in infant botulism,' Muscle & Nerve, https://pubmed.ncbi.nlm.nih.gov/10567083/ -- used because the ABPMR-cited source (Kimura J. Electrodiagnosis in Diseases of Nerve and Muscle, 4th ed. 2013, page 822) is not available to the user.",
-    "image": "images/abpmr/pmr100_q24_ncs.png",
+    "image": "images/pmr100_q24_ncs.png",
     "video_link": ""
   },
   {
@@ -1905,7 +1905,7 @@ const q02 = [
     "option_d": "normal study",
     "correct_option": "B",
     "explanation": "This question depends on an embedded nerve-conduction inching-study image showing a focal drop in compound muscle action potential (CMAP) amplitude/area across a short ulnar nerve segment (classically at the elbow/cubital tunnel), which is the electrodiagnostic hallmark of focal conduction block rather than temporal dispersion (which shows CMAP broadening/duration prolongation without an abrupt focal amplitude drop) or a decrement (a progressive reduction seen with repetitive stimulation in neuromuscular junction disorders, not short-segment inching studies). A search of the available Neurologic Diagnosis markdown for ulnar inching/short-segment NCS terminology and conduction block criteria did not turn up a directly matching passage describing this specific technique, so the reasoning above is based on standard electrodiagnostic principles rather than a located passage in that book. The clinical picture (ring/little finger numbness with intrinsic hand weakness) is classic ulnar neuropathy, consistent with a focal conduction block localized by inching across the cubital tunnel.\nReference: Note: could not locate a directly supporting passage in the provided The Neurologic Diagnosis markdown file via keyword search (searched \"inching,\" \"conduction block,\" \"cubital tunnel,\" \"nerve conduction,\" \"demyelinat-\"). Original ABPMR answer key citation: Adams and Victor's Principles of Neurology. 9th ed. New York: McGraw-Hill; 2009, page 1239-1240.",
-    "image": "images/abpmr/pmr100_q47_inching.png",
+    "image": "images/pmr100_q47_inching.png",
     "video_link": ""
   },
   {
@@ -1931,7 +1931,7 @@ const q02 = [
     "option_d": "detrusor hyperreflexia",
     "correct_option": "C",
     "explanation": "The accompanying cystogram (see image) shows contrast filling the bladder with retrograde opacification tracking up a dilated ureter and into a markedly dilated, clubbed renal collecting system on the right side -- the classic cystographic appearance of vesicoureteral reflux (VUR), not a discrete calculus (nephrolithiasis), a diffusely atonic non-refluxing ureter, or a bladder-only finding of detrusor hyperreflexia (which is a urodynamic/functional diagnosis, not something a static cystogram image itself 'shows'). A case report in Spinal Cord (Nature Publishing Group) on long-term follow-up of spinal cord injury patients notes that in chronic SCI with neurogenic bladder managed by indwelling catheter, 'detrusor hyperactivity and high intravesical pressures are the basic causes for vesicoureteral reflux,' and that an indwelling Foley catheter alone 'did not prevent progression of vesicoureteral reflux and did not protect the refluxing kidney from damage.' This matches the clinical scenario: a man with chronic (ASIA A) tetraplegia on an indwelling catheter, whose neurogenic bladder generates chronically elevated intravesical pressure that has produced VUR, visible on the cystogram as reflux of contrast into the upper tracts.\nReference: Kim YH et al., 'Long-term follow-up of spinal cord injury patients with vesicoureteral reflux,' Spinal Cord (Nature), https://www.nature.com/articles/sc19887 -- open-access journal source used because the ABPMR-cited textbook (Pollack HM, et al. Clinical Urology, 2nd ed. 2000, page 1105) is not available to the user.",
-    "image": "images/abpmr/pmr100_q49_cystogram.png",
+    "image": "images/pmr100_q49_cystogram.png",
     "video_link": ""
   },
   {
@@ -2503,7 +2503,7 @@ const q02 = [
     "option_d": "Vertical talus",
     "correct_option": "C",
     "explanation": "Calcaneovalgus foot deformity is described in the orthopedic spina bifida literature as occurring in up to about a third of patients with low-level (typically L4-L5) myelomeningocele, resulting from an imbalance in which strong or intact ankle dorsiflexors and evertors (e.g., tibialis anterior, peroneals) are unopposed by weak or paralyzed plantarflexors and invertors (gastrocsoleus/tibialis posterior). The foot rests in a fixed dorsiflexed and everted (valgus) position, with the heel prominent and weight-bearing shifted onto the calcaneus -- distinct from equinovarus (plantarflexed/inverted, seen with overactive plantarflexors/invertors, as in idiopathic clubfoot), equinovalgus (plantarflexed but everted), and vertical talus (a rigid rocker-bottom foot from a dislocated talonavicular joint). Given the muscle imbalance pattern typical of spina bifida (dorsiflexors/evertors dominant), calcaneovalgus is the deformity most classically depicted and expected in this population.\nReference: Swaroop VT, Dias L. Orthopaedic management of spina bifida-part II: foot and ankle deformities. J Child Orthop. 2011, https://link.springer.com/article/10.1007/s11832-011-0368-9 -- used because the ABPMR-cited source (Alexander & Matthews. Pediatric Rehabilitation, Principles and Practice, 4th ed., 2010, page 217) is not available to the user.",
-    "image": "images/abpmr/pmr100_q93_footdeformity.png",
+    "image": "images/pmr100_q93_footdeformity.png",
     "video_link": ""
   },
   {

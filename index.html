@@ -74,13 +74,6 @@
 <body>
 
   <div class="card">
-    <form name="question-flags" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="user_name" />
-      <input type="text" name="question_text" />
-      <input type="text" name="provided_answer" />
-      <textarea name="user_review"></textarea>
-    </form>
-
     <!-- SCREEN 1: Main Homepage -->
     <div id="home-screen">
       <h1 style="margin-top: 0; margin-bottom: 10px;">Rehab & Medicine Hub 🩺</h1>
@@ -96,8 +89,11 @@
         <div id="status-qmain" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions.js (Missing or Error)</div>
         <div id="status-q01" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions_01.js (Missing or Error)</div>
         <div id="status-q02" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions_02.js (Missing or Error)</div>
+        <div id="status-q03" style="color: #EF4444; margin-top: 5px; font-weight: 500;">🔴 questions_03.js (Missing or Error)</div>
         <div style="margin-top: 10px; font-weight: bold; color: #111827; border-top: 1px solid #E5E7EB; padding-top: 10px;">Total Questions Loaded: <span id="total-q-count" style="color: #4F46E5;">0</span></div>
       </div>
+
+      <button class="btn-secondary btn" id="view-flags-btn" onclick="showScreen('flags-screen'); loadFlaggedQuestions();" style="display: none; margin-top: 15px; font-size: 0.85rem;">⚠️ View Flagged Questions (<span id="flags-count">0</span>)</button>
 
       <div style="margin-top: 25px; text-align: left; font-size: 8pt; color: #9CA3AF; font-weight: 500;">
         Made By L&L, MRM2026
@@ -113,6 +109,14 @@
       <div class="setting-group">
         <label for="user-name-input">Your Name / Nickname:</label>
         <input type="text" id="user-name-input" placeholder="Enter your name (optional)" />
+      </div>
+      <div class="setting-group">
+        <label for="question-source">Question Source:</label>
+        <select id="question-source" onchange="updateUnansweredCount()">
+          <option value="all" selected>All Questions</option>
+          <option value="past-year">Past Year Questions Only</option>
+          <option value="other">Excluding Past Year Questions</option>
+        </select>
       </div>
       <div class="setting-group">
         <label for="question-count">Number of Questions:</label>
@@ -154,6 +158,7 @@
       </div>
       <h3 id="question-text" style="text-align: left; margin-top: 5px; font-size: 1.4rem; line-height: 1.5; color: #111827;"></h3>
       <div id="options-container"></div>
+      <div id="question-tag-footer" class="hidden" style="text-align: right; font-size: 0.75rem; color: #9CA3AF; font-style: italic; margin-top: 8px;"></div>
       <div id="explanation" class="explanation-box hidden">
         <strong>Explanation:</strong>
         <p id="explanation-text"></p>
@@ -207,15 +212,26 @@
       </div>
       <button class="btn" onclick="location.reload()">Return to Homepage</button>
     </div>
+
+    <!-- SCREEN 7: Flagged Questions -->
+    <div id="flags-screen" class="hidden clearfix">
+      <button class="btn-back" onclick="showScreen('home-screen')">🔙 Back to Home</button>
+      <div style="clear: both;"></div>
+      <h2 style="margin-top: 0;">Flagged Questions</h2>
+      <div id="flags-list" style="text-align: left;"></div>
+      <button class="btn btn-secondary" onclick="downloadFlaggedQuestions()" style="margin-top: 10px;">⬇️ Download as JSON</button>
+      <button class="btn-warning btn" style="width: 100%;" onclick="clearFlaggedQuestions()">Clear All</button>
+    </div>
   </div>
 
   <!-- Load ALL External Data Files -->
-  <script src="questions.js"></script>
-  <script src="questions_01.js"></script>
-  <script src="questions_02.js"></script>
-  
-  <script src="definitions.js"></script>
-  <script src="anatomy.js"></script>
+  <script src="questions.js?v=20260918c"></script>
+  <script src="questions_01.js?v=20260918c"></script>
+  <script src="questions_02.js?v=20260918c"></script>
+  <script src="questions_03.js?v=20260918c"></script>
+
+  <script src="definitions.js?v=20260918c"></script>
+  <script src="anatomy.js?v=20260918c"></script>
 
   <script>
     // --- MERGE MULTIPLE QBANK FILES & DIAGNOSTICS ---
@@ -234,17 +250,25 @@
       document.getElementById('status-q01').style.color = '#10B981';
     }
     // Check batch 02
-    if (typeof q02 !== 'undefined') { 
-      questionsBank.push(...q02); 
+    if (typeof q02 !== 'undefined') {
+      questionsBank.push(...q02);
       document.getElementById('status-q02').innerHTML = `🟢 questions_02.js loaded successfully (${q02.length} Qs)`;
       document.getElementById('status-q02').style.color = '#10B981';
     }
+    // Check batch 03
+    if (typeof q03 !== 'undefined') {
+      questionsBank.push(...q03);
+      document.getElementById('status-q03').innerHTML = `🟢 questions_03.js loaded successfully (${q03.length} Qs)`;
+      document.getElementById('status-q03').style.color = '#10B981';
+    }
+
+    questionsBank.forEach((q, idx) => { q.id = q.id !== undefined ? q.id : idx; });
 
     // Update total counter on dashboard
     document.getElementById('total-q-count').innerText = questionsBank.length;
 
     function showScreen(screenId) {
-      const screens = ['home-screen', 'mcq-setup-screen', 'definitions-screen', 'quiz-screen', 'anatomy-screen', 'result-screen'];
+      const screens = ['home-screen', 'mcq-setup-screen', 'definitions-screen', 'quiz-screen', 'anatomy-screen', 'result-screen', 'flags-screen'];
       screens.forEach(id => document.getElementById(id).classList.add('hidden'));
       document.getElementById(screenId).classList.remove('hidden');
     }
@@ -370,10 +394,19 @@
       const history = getAnsweredIDs();
       if (!history.includes(id)) { history.push(id); localStorage.setItem('answered_mcq_ids', JSON.stringify(history)); }
     }
+    function getQuestionsBySource(source) {
+      if (source === 'past-year') return questionsBank.filter(q => q.tag === 'Past Year Question');
+      if (source === 'other') return questionsBank.filter(q => q.tag !== 'Past Year Question');
+      return questionsBank;
+    }
+
     function updateUnansweredCount() {
       if (typeof questionsBank === 'undefined' || questionsBank.length === 0) return;
-      const remaining = questionsBank.length - getAnsweredIDs().length;
-      document.getElementById('unanswered-count-text').innerText = `${remaining} out of ${questionsBank.length} questions remaining.`;
+      const source = document.getElementById('question-source').value;
+      const pool = getQuestionsBySource(source);
+      const answeredIDs = getAnsweredIDs();
+      const remaining = pool.filter(q => !answeredIDs.includes(q.id)).length;
+      document.getElementById('unanswered-count-text').innerText = `${remaining} out of ${pool.length} questions remaining.`;
     }
     function resetAnswerHistory() {
       if (confirm("Reset answered questions history?")) { localStorage.removeItem('answered_mcq_ids'); updateUnansweredCount(); }
@@ -389,10 +422,11 @@
       if (inputName) userName = inputName;
       const selectedCount = parseInt(document.getElementById('question-count').value);
       const unansweredOnly = document.getElementById('unanswered-only').checked;
+      const source = document.getElementById('question-source').value;
       const answeredIDs = getAnsweredIDs();
 
-      let pool = [...questionsBank];
-      pool.forEach((q, idx) => { q.id = q.id !== undefined ? q.id : idx; });
+      let pool = getQuestionsBySource(source);
+      if (pool.length === 0) { alert("No questions found for this source."); return; }
 
       if (unansweredOnly) {
         pool = pool.filter(q => !answeredIDs.includes(q.id));
@@ -412,20 +446,32 @@
       document.getElementById('progress-text').innerText = `Question ${currentQ + 1} of ${activeQuestions.length}`;
       document.getElementById('question-text').innerText = q.question_text;
 
+      const tagFooter = document.getElementById('question-tag-footer');
+      if (q.tag) {
+        tagFooter.innerText = q.tag;
+        tagFooter.classList.remove('hidden');
+      } else {
+        tagFooter.classList.add('hidden');
+      }
+
       const imgContainer = document.getElementById('question-image-container');
       const imgElement = document.getElementById('question-image');
       const imageSource = q.image_url || q.image; 
 
-      if (imageSource) { 
-        imgElement.src = imageSource; 
-        imgContainer.classList.remove('hidden'); 
-      } else { 
-        imgContainer.classList.add('hidden'); 
+      if (imageSource) {
+        imgElement.onerror = () => imgContainer.classList.add('hidden');
+        imgElement.src = imageSource;
+        imgContainer.classList.remove('hidden');
+      } else {
+        imgContainer.classList.add('hidden');
       }
 
       const container = document.getElementById('options-container');
       container.innerHTML = '';
-      [{ k: 'A', t: q.option_a }, { k: 'B', t: q.option_b }, { k: 'C', t: q.option_c }, { k: 'D', t: q.option_d }].forEach(opt => {
+      ['A', 'B', 'C', 'D', 'E', 'F']
+        .map(k => ({ k, t: q[`option_${k.toLowerCase()}`] }))
+        .filter(opt => opt.t !== undefined && opt.t !== null && opt.t !== '')
+        .forEach(opt => {
         const btn = document.createElement('button');
         btn.className = 'option-btn'; btn.id = `opt-${opt.k}`; btn.innerText = `${opt.k}) ${opt.t}`;
         btn.onclick = () => handleAnswer(opt.k);
@@ -449,17 +495,70 @@
 
     function toggleFlagForm() { document.getElementById('flag-form-container').classList.toggle('hidden'); }
 
+    const FEEDBACK_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdAMOKYcC6FVtyX8OixiCYpha8GZbe4RXrm2syecm-JUsk2pA/formResponse";
+    const FEEDBACK_FORM_ENTRIES = {
+      user_name: "entry.2025341115",
+      question_text: "entry.1047699245",
+      provided_answer: "entry.60586117",
+      user_review: "entry.1411587752"
+    };
+
     function submitQuestionFlag() {
       const q = activeQuestions[currentQ];
       const reviewText = document.getElementById('flag-review-text').value.trim();
       if (!reviewText) { alert("Please write a brief note."); return; }
-      
-      const payload = Object.keys({ "form-name": "question-flags", "user_name": userName, "question_text": q.question_text, "provided_answer": q.correct_option, "user_review": reviewText })
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(arguments[0][key])).join("&");
 
-      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: payload })
-      .then(() => { document.getElementById('flag-status-msg').innerText = "✓ Submitted!"; })
-      .catch(() => alert("Failed."));
+      const flag = { user_name: userName, question_text: q.question_text, provided_answer: q.correct_option, user_review: reviewText, ts: new Date().toISOString() };
+      const flags = JSON.parse(localStorage.getItem('question_flags') || '[]');
+      flags.push(flag);
+      localStorage.setItem('question_flags', JSON.stringify(flags));
+      updateFlagsButton();
+
+      const formData = new FormData();
+      formData.append(FEEDBACK_FORM_ENTRIES.user_name, flag.user_name);
+      formData.append(FEEDBACK_FORM_ENTRIES.question_text, flag.question_text);
+      formData.append(FEEDBACK_FORM_ENTRIES.provided_answer, flag.provided_answer);
+      formData.append(FEEDBACK_FORM_ENTRIES.user_review, flag.user_review);
+
+      fetch(FEEDBACK_FORM_ACTION, { method: "POST", mode: "no-cors", body: formData })
+        .then(() => { document.getElementById('flag-status-msg').innerText = "✓ Submitted!"; })
+        .catch(() => { document.getElementById('flag-status-msg').innerText = "✓ Saved locally (submission failed, will retry export)."; });
+    }
+
+    function updateFlagsButton() {
+      const flags = JSON.parse(localStorage.getItem('question_flags') || '[]');
+      document.getElementById('flags-count').innerText = flags.length;
+      document.getElementById('view-flags-btn').style.display = flags.length > 0 ? 'block' : 'none';
+    }
+
+    function loadFlaggedQuestions() {
+      const flags = JSON.parse(localStorage.getItem('question_flags') || '[]');
+      const list = document.getElementById('flags-list');
+      list.innerHTML = flags.length === 0 ? '<p>No flagged questions.</p>' : '';
+      flags.slice().reverse().forEach(f => {
+        const item = document.createElement('div');
+        item.className = 'definition-item';
+        item.innerHTML = `<strong>${f.user_name} · ${new Date(f.ts).toLocaleString()}</strong><p>${f.question_text}</p><p><em>Provided answer: ${f.provided_answer}</em></p><p>${f.user_review}</p>`;
+        list.appendChild(item);
+      });
+    }
+
+    function downloadFlaggedQuestions() {
+      const flags = JSON.parse(localStorage.getItem('question_flags') || '[]');
+      const blob = new Blob([JSON.stringify(flags, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'flagged_questions.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function clearFlaggedQuestions() {
+      if (confirm("Clear all flagged questions? This cannot be undone.")) {
+        localStorage.removeItem('question_flags');
+        loadFlaggedQuestions();
+        updateFlagsButton();
+      }
     }
 
     function nextQuestion() {
@@ -477,6 +576,7 @@
 
     if (typeof definitionsBank !== 'undefined') loadDefinitions();
     if (typeof questionsBank !== 'undefined' && questionsBank.length > 0) updateUnansweredCount();
+    updateFlagsButton();
   </script>
 </body>
 </html>
