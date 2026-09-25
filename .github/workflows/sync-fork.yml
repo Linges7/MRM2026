@@ -1,0 +1,38 @@
+name: Sync fork into main
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch fork
+        run: git fetch https://github.com/linges7/mrm2026 main:fork-main
+
+      - name: Merge fork into main
+        run: |
+          if git merge-base --is-ancestor fork-main main; then
+            echo "Nothing new from fork."
+            exit 0
+          fi
+          git merge fork-main --no-edit -m "Auto-sync: merge linges7/mrm2026 main into main"
+
+      - name: Push
+        run: git push origin main
