@@ -112,8 +112,11 @@
     .chip.accent { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
 
     /* ---------- Top navigation ---------- */
-    .topnav { position: sticky; top: 0; z-index: 20; padding: 18px 0; background: #EEF1F6; box-shadow: 0 1px 0 rgba(21,32,59,.06); }
-    .topnav .wrap { display: flex; align-items: center; justify-content: space-between; }
+    .topnav { position: sticky; top: 0; z-index: 20; padding: 18px 0; }
+    .topnav::before { content: ""; position: absolute; inset: 0; z-index: -1;
+      background: rgba(238,241,246,.7); -webkit-backdrop-filter: blur(16px) saturate(150%); backdrop-filter: blur(16px) saturate(150%);
+      box-shadow: 0 1px 0 rgba(21,32,59,.06); opacity: var(--nav-o, 0); transition: opacity .2s ease; }
+    .topnav .wrap { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; }
     .brand { display: inline-flex; align-items: center; gap: 12px; }
     .brand-mark { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center;
       background: linear-gradient(140deg, #1F6F78, #15203B); color: #fff; box-shadow: var(--shadow-sm); }
@@ -1198,6 +1201,18 @@
     }
     $('#review-btn').onclick = () => { session.i = 0; go('quiz'); };
     $('#new-session-btn').onclick = () => go('qbank');
+
+    // ---------- Top nav scroll fade ----------
+    const topnavEl = $('.topnav');
+    let navTicking = false;
+    function updateNavFade() {
+      navTicking = false;
+      const o = Math.min(1, window.scrollY / 70);
+      topnavEl.style.setProperty('--nav-o', o.toFixed(3));
+    }
+    window.addEventListener('scroll', () => {
+      if (!navTicking) { navTicking = true; requestAnimationFrame(updateNavFade); }
+    }, { passive: true });
 
     render();
   </script>
