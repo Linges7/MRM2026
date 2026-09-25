@@ -720,9 +720,6 @@
 
   <!-- Question data -->
   <script src="questions.js?v=20260925a"></script>
-  <script src="questions_01.js?v=20260925a"></script>
-  <script src="questions_02.js?v=20260925a"></script>
-  <script src="questions_03.js?v=20260925a"></script>
 
   <script>
     const $ = s => document.querySelector(s);
@@ -730,12 +727,7 @@
     const PAST_YEAR = 'Past Year Question';
 
     // ---------- Data ----------
-    const questionsBank = [];
-    let isQbankFaulty = false;
-    if (typeof qMain !== 'undefined') questionsBank.push(...qMain); else isQbankFaulty = true;
-    if (typeof q01 !== 'undefined') questionsBank.push(...q01); else isQbankFaulty = true;
-    if (typeof q02 !== 'undefined') questionsBank.push(...q02); else isQbankFaulty = true;
-    if (typeof q03 !== 'undefined') questionsBank.push(...q03); else isQbankFaulty = true;
+    const questionsBank = typeof qMain !== 'undefined' ? qMain.slice() : [];
     questionsBank.forEach((q, idx) => { q.id = q.id !== undefined ? q.id : idx; });
 
     const SOURCES = [
