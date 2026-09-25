@@ -346,6 +346,22 @@
     .report-item .ri-q { margin: 8px 0; color: var(--ink); }
     .report-item .ri-note { margin: 0; color: var(--ink-2); }
 
+    /* ---------- About ---------- */
+    .about-card { padding: 40px 44px; max-width: 760px; margin: 0 auto; }
+    .about-section + .about-section { margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--line); }
+    .about-section h2 { font-family: var(--font-display); font-weight: 500; font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; color: var(--ink); }
+    .about-section p { margin: 0 0 10px; color: var(--ink-2); font-size: 15.5px; line-height: 1.75; }
+    .about-section p:last-child { margin-bottom: 0; }
+    .about-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    .about-note { font-style: normal; }
+    .about-note em { color: var(--ink-3); font-style: italic; }
+    .about-refs { margin: 14px 0 0; padding-left: 22px; color: var(--ink-2); font-size: 15px; line-height: 1.7; }
+    .about-refs li { margin-bottom: 8px; }
+    .about-ref-placeholder { list-style: none; margin-left: -22px; color: var(--ink-3); font-style: italic; }
+    @media (max-width: 640px) {
+      .about-card { padding: 26px 22px; }
+    }
+
     /* ---------- Responsive ---------- */
     @media (max-width: 920px) {
       .tiles { grid-template-columns: 1fr; }
@@ -634,13 +650,56 @@
       </div>
     </section>
 
-    <!-- PLACEHOLDER (Videos / Discussion / Definitions / About) -->
+    <!-- PLACEHOLDER (Videos / Definitions) -->
     <section id="screen-blank" class="screen wrap" hidden>
       <div class="page-head">
         <a class="link-btn" href="#/"><svg><use href="#i-back"/></svg>Home</a>
         <h1 class="display" id="blank-title"></h1>
       </div>
       <div class="glass blank"><p>Coming soon</p></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="screen-about" class="screen wrap" hidden>
+      <div class="page-head">
+        <a class="link-btn" href="#/"><svg><use href="#i-back"/></svg>Home</a>
+        <h1 class="display">About</h1>
+      </div>
+
+      <article class="glass about-card">
+        <section class="about-section">
+          <h2>What this is</h2>
+          <p>Rehab Study Corner is a private study tool built by L&amp;L for personal exam preparation in Rehabilitation Medicine. It is not an official, accredited, or publisher-endorsed resource, and it is not affiliated with any examining body, institution, or society.</p>
+        </section>
+
+        <section class="about-section">
+          <h2>A note on content</h2>
+          <p>This resource is under active development. Some questions currently included have been reproduced, in whole or in part, from the published reference texts listed below, for personal, non-commercial, educational study purposes. This is a temporary and ongoing measure: these questions are being progressively replaced with original material written by L&amp;L. No claim of ownership is made over any reproduced third-party content — all rights remain with the original authors and publishers.</p>
+        </section>
+
+        <section class="about-section">
+          <h2>Sources &amp; references</h2>
+          <p class="about-note">The following texts have been referenced or drawn upon while building this resource. <em>[List to be completed — add author(s), title, edition, publisher and year for each source used.]</em></p>
+          <ol class="about-refs" id="about-refs">
+            <li class="about-ref-placeholder">— Reference list pending —</li>
+          </ol>
+        </section>
+
+        <section class="about-section">
+          <h2>Copyright</h2>
+          <p>Original content, design, and compilation © L&amp;L 2026. All rights reserved. Third-party material referenced above remains the property of its respective authors and publishers, and is used here without claim of ownership.</p>
+        </section>
+
+        <section class="about-section">
+          <h2>Not medical advice</h2>
+          <p>This tool is intended solely for exam preparation and personal study. It is not a substitute for professional medical training, clinical judgment, or official clinical practice guidelines, and must not be relied upon for patient care decisions.</p>
+        </section>
+
+        <section class="about-section">
+          <h2>Corrections &amp; takedown requests</h2>
+          <p>If you are a rights holder with concerns about content included on this site, or if you have spotted an error, please contact <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a> <em>(placeholder — replace with a real contact address)</em>.</p>
+        </section>
+      </article>
     </section>
   </main>
 
@@ -696,14 +755,14 @@
     const optionsOf = q => LETTERS.map(k => ({ k, t: q[`option_${k.toLowerCase()}`] })).filter(o => o.t !== undefined && o.t !== null && o.t !== '');
 
     // ---------- Router ----------
-    const BLANK_TITLES = { videos: 'Videos', definitions: 'Definitions', about: 'About' };
+    const BLANK_TITLES = { videos: 'Videos', definitions: 'Definitions' };
     const go = r => { location.hash = '#/' + r; };
 
     function render() {
       let r = location.hash.replace(/^#\/?/, '');
       if (r === 'quiz' && !session) return go('qbank');
       if (r === 'results' && !(session && session.finished)) return go('qbank');
-      if (!['', 'qbank', 'quiz', 'results', 'reports'].includes(r) && !BLANK_TITLES[r]) r = '';
+      if (!['', 'qbank', 'quiz', 'results', 'reports', 'about'].includes(r) && !BLANK_TITLES[r]) r = '';
 
       closeDrawer();
       document.querySelectorAll('main > section').forEach(s => s.hidden = true);
@@ -720,6 +779,7 @@
       if (r === 'results') renderResults();
       if (r === 'reports') renderReports();
       if (BLANK_TITLES[r]) { $('#blank-title').textContent = BLANK_TITLES[r]; document.title = `${BLANK_TITLES[r]} · MRM 2026`; }
+      else if (r === 'about') document.title = 'About · MRM 2026';
       else document.title = 'MRM 2026 · Rehab Medicine Review';
       window.scrollTo(0, 0);
     }
