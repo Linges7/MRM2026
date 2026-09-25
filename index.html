@@ -362,6 +362,14 @@
       .about-card { padding: 26px 22px; }
     }
 
+    /* ---------- Definitions ---------- */
+    .def-search { max-width: 420px; margin-bottom: 24px; }
+    .def-list { display: grid; gap: 12px; }
+    .def-item { padding: 20px 24px; }
+    .def-item .term { display: block; font-family: var(--font-display); font-weight: 500; font-size: 17px; color: var(--ink); margin-bottom: 6px; }
+    .def-item .def { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.65; }
+    .def-empty { text-align: center; color: var(--ink-3); font-size: 14px; margin-top: 30px; }
+
     /* ---------- Responsive ---------- */
     @media (max-width: 920px) {
       .tiles { grid-template-columns: 1fr; }
@@ -436,7 +444,6 @@
     <!-- HOME -->
     <section id="screen-home" class="screen wrap" hidden>
       <div class="hero">
-        <div class="eyebrow">Rehabilitation Medicine · Board Review</div>
         <h1 class="display">Welcome to the <em>Rehab Study Corner</em></h1>
         <p>Start Questions, Watch Videos, Revisit Definitions.</p>
       </div>
@@ -482,7 +489,7 @@
             <p>Revisit key terms and concepts at a glance.</p>
           </div>
           <div class="tile-foot">
-            <span class="chip">Coming soon</span>
+            <span class="chip accent" id="home-defcount">— terms</span>
             <span class="tile-arrow"><svg><use href="#i-arrow"/></svg></span>
           </div>
         </a>
@@ -701,6 +708,20 @@
         </section>
       </article>
     </section>
+
+    <!-- DEFINITIONS -->
+    <section id="screen-definitions" class="screen wrap" hidden>
+      <div class="page-head">
+        <a class="link-btn" href="#/"><svg><use href="#i-back"/></svg>Home</a>
+        <h1 class="display">Definitions</h1>
+        <p>Quick reference for key terms and concepts.</p>
+      </div>
+
+      <input class="input def-search" type="search" id="def-search" placeholder="Search definitions…" autocomplete="off">
+
+      <div class="def-list" id="definitions-list"></div>
+      <p class="def-empty" id="def-empty" hidden>No definitions match your search.</p>
+    </section>
   </main>
 
   <div id="drawer-root" hidden>
@@ -720,6 +741,7 @@
 
   <!-- Question data -->
   <script src="questions.js?v=20260925a"></script>
+  <script src="definitions.js?v=20260925a"></script>
 
   <script>
     const $ = s => document.querySelector(s);
@@ -747,14 +769,14 @@
     const optionsOf = q => LETTERS.map(k => ({ k, t: q[`option_${k.toLowerCase()}`] })).filter(o => o.t !== undefined && o.t !== null && o.t !== '');
 
     // ---------- Router ----------
-    const BLANK_TITLES = { videos: 'Videos', definitions: 'Definitions' };
+    const BLANK_TITLES = { videos: 'Videos' };
     const go = r => { location.hash = '#/' + r; };
 
     function render() {
       let r = location.hash.replace(/^#\/?/, '');
       if (r === 'quiz' && !session) return go('qbank');
       if (r === 'results' && !(session && session.finished)) return go('qbank');
-      if (!['', 'qbank', 'quiz', 'results', 'reports', 'about'].includes(r) && !BLANK_TITLES[r]) r = '';
+      if (!['', 'qbank', 'quiz', 'results', 'reports', 'about', 'definitions'].includes(r) && !BLANK_TITLES[r]) r = '';
 
       closeDrawer();
       document.querySelectorAll('main > section').forEach(s => s.hidden = true);
@@ -770,8 +792,10 @@
       if (r === 'quiz') renderQuestion();
       if (r === 'results') renderResults();
       if (r === 'reports') renderReports();
+      if (r === 'definitions') renderDefinitions();
       if (BLANK_TITLES[r]) { $('#blank-title').textContent = BLANK_TITLES[r]; document.title = `${BLANK_TITLES[r]} · MRM 2026`; }
       else if (r === 'about') document.title = 'About · MRM 2026';
+      else if (r === 'definitions') document.title = 'Definitions · MRM 2026';
       else document.title = 'MRM 2026 · Rehab Medicine Review';
       window.scrollTo(0, 0);
     }
@@ -780,6 +804,7 @@
     // ---------- Home ----------
     function renderHome() {
       $('#home-qcount').textContent = `${questionsBank.length.toLocaleString()} questions`;
+      $('#home-defcount').textContent = `${definitions.length.toLocaleString()} terms`;
     }
 
     // ---------- Setup ----------
@@ -1104,6 +1129,38 @@
     $('#clear-flags-btn').onclick = () => {
       if (confirm('Clear all reports stored on this device?')) { localStorage.removeItem('question_flags'); renderReports(); }
     };
+
+    // ---------- Definitions ----------
+    const definitions = typeof definitionsBank !== 'undefined' ? definitionsBank : [];
+
+    function renderDefinitions() {
+      const list = $('#definitions-list');
+      list.innerHTML = '';
+      definitions
+        .slice()
+        .sort((a, b) => a.term.localeCompare(b.term))
+        .forEach(d => {
+          const el = document.createElement('div');
+          el.className = 'glass def-item';
+          el.innerHTML = '<span class="term"></span><p class="def"></p>';
+          el.querySelector('.term').textContent = d.term;
+          el.querySelector('.def').textContent = d.definition;
+          list.appendChild(el);
+        });
+      filterDefinitions();
+    }
+
+    function filterDefinitions() {
+      const q = $('#def-search').value.trim().toLowerCase();
+      let visible = 0;
+      document.querySelectorAll('#definitions-list .def-item').forEach(el => {
+        const match = el.textContent.toLowerCase().includes(q);
+        el.hidden = !match;
+        if (match) visible++;
+      });
+      $('#def-empty').hidden = visible !== 0;
+    }
+    $('#def-search').addEventListener('input', filterDefinitions);
 
     // ---------- Results ----------
     function renderResults() {
