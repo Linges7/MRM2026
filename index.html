@@ -442,6 +442,8 @@
       if (!activeQuestions || activeQuestions.length === 0) return;
       document.getElementById('explanation').classList.add('hidden');
       document.getElementById('flag-form-container').classList.add('hidden');
+      document.getElementById('flag-status-msg').innerText = '';
+      document.getElementById('flag-review-text').value = '';
       const q = activeQuestions[currentQ];
       document.getElementById('progress-text').innerText = `Question ${currentQ + 1} of ${activeQuestions.length}`;
       document.getElementById('question-text').innerText = q.question_text;
