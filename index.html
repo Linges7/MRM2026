@@ -132,7 +132,7 @@
 
     /* ---------- Home ---------- */
     .hero { padding: 72px 0 56px; max-width: 900px; }
-    .hero h1 { font-size: clamp(42px, 6.4vw, 78px); font-weight: 600; line-height: 1.02; margin: 18px 0 22px; }
+    .hero h1 { font-size: clamp(38px, 5.6vw, 66px); font-weight: 500; line-height: 1.04; margin: 18px 0 22px; }
     .hero h1 em { font-style: normal; color: var(--accent); }
     .hero p { font-size: 18.5px; color: var(--ink-2); max-width: 520px; margin: 0; }
 
@@ -158,7 +158,7 @@
     .tile-icon svg { width: 24px; height: 24px; }
     .tile-num { font-family: var(--font-display); font-size: 12px; font-weight: 400; color: var(--ink-3); letter-spacing: .12em; }
     .tile-body { margin-top: auto; }
-    .tile h2 { font-size: 32px; font-weight: 600; line-height: 1.1; margin: 0 0 10px; }
+    .tile h2 { font-size: 32px; font-weight: 500; line-height: 1.1; margin: 0 0 10px; }
     .tile p { margin: 0; color: var(--ink-2); font-size: 15.5px; max-width: 300px; min-height: 4.65em; }
     .tile-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); }
     .tile-arrow { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line);
@@ -166,9 +166,7 @@
     .tile-arrow svg { width: 18px; height: 18px; }
     .tile:hover .tile-arrow { background: var(--ink); color: #fff; transform: translateX(3px); border-color: var(--ink); }
 
-    .home-foot { margin-top: 56px; display: flex; justify-content: space-between; align-items: center; color: var(--ink-3); font-size: 13px; gap: 16px; flex-wrap: wrap; }
-    .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); margin-right: 8px; box-shadow: 0 0 0 4px var(--ok-soft); vertical-align: middle; }
-    .status-dot.bad { background: var(--bad); box-shadow: 0 0 0 4px var(--bad-soft); }
+    .home-foot { margin-top: 56px; display: flex; justify-content: center; align-items: center; color: var(--ink-3); font-size: 13px; }
 
     /* ---------- Page header ---------- */
     .page-head { padding: 36px 0 32px; }
@@ -475,8 +473,7 @@
       </div>
 
       <div class="home-foot">
-        <span><span class="status-dot" id="status-dot"></span><span id="status-text">Checking question bank…</span></span>
-        <span>Made by L&amp;L · MRM2026</span>
+        <span>© L&amp;L 2026</span>
       </div>
     </section>
 
@@ -731,9 +728,6 @@
     // ---------- Home ----------
     function renderHome() {
       $('#home-qcount').textContent = `${questionsBank.length.toLocaleString()} questions`;
-      const ok = !isQbankFaulty && questionsBank.length > 0;
-      $('#status-dot').classList.toggle('bad', !ok);
-      $('#status-text').textContent = ok ? `Question bank ready · ${questionsBank.length.toLocaleString()} questions loaded` : 'Question bank failed to load';
     }
 
     // ---------- Setup ----------
