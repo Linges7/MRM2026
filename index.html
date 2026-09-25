@@ -114,19 +114,16 @@
     /* ---------- Top navigation ---------- */
     .topnav { position: sticky; top: 0; z-index: 20; padding: 18px 0; }
     .topnav::before { content: ""; position: absolute; inset: 0; z-index: -1;
-      background: rgba(238,241,246,.7); -webkit-backdrop-filter: blur(16px) saturate(150%); backdrop-filter: blur(16px) saturate(150%);
-      box-shadow: 0 1px 0 rgba(21,32,59,.06); opacity: var(--nav-o, 0); transition: opacity .2s ease; }
+      background: rgba(238,241,246,.4); -webkit-backdrop-filter: blur(10px) saturate(140%); backdrop-filter: blur(10px) saturate(140%);
+      opacity: var(--nav-o, 0); transition: opacity .2s ease; }
     .topnav .wrap { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; }
     .brand { display: inline-flex; align-items: center; gap: 12px; }
-    .brand-mark { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center;
-      background: linear-gradient(140deg, #1F6F78, #15203B); color: #fff; box-shadow: var(--shadow-sm); }
-    .brand-mark svg { width: 18px; height: 18px; }
     .brand-name { font-family: var(--font-display); font-size: 14px; letter-spacing: .22em; font-weight: 500; }
     .brand-name span { font-weight: 300; color: var(--ink-3); }
-    .navlinks { display: flex; gap: 4px; padding: 5px; border-radius: 999px; }
-    .navlinks a { font-family: var(--font-display); font-size: 12.5px; font-weight: 400; letter-spacing: .04em; color: var(--ink-2);
-      padding: 8px 16px; border-radius: 999px; transition: background .2s, color .2s; }
-    .navlinks a:hover, .navlinks a.active { background: rgba(255,255,255,.9); color: var(--ink); box-shadow: var(--shadow-sm); }
+    .navlinks { display: flex; gap: 4px; }
+    .navlinks a { font-family: var(--font-display); font-size: 13px; font-weight: 400; letter-spacing: .04em; color: var(--ink-2);
+      padding: 8px 4px; transition: color .2s; }
+    .navlinks a:hover, .navlinks a.active { color: var(--ink); }
     body[data-route="quiz"] .topnav { display: none; }
 
     main { padding-bottom: 80px; }
@@ -427,17 +424,15 @@
     <symbol id="i-qbank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="15" height="17" rx="3"/><path d="M8.5 8.5l1.5 1.5 3-3M8.5 15l1.5 1.5 3-3M15 9h1M15 15.5h1"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3.5"/><path d="M10.5 9.3v5.4l4.5-2.7z"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h8A2.5 2.5 0 0 1 17 6.5v5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3v-3.2A2.5 2.5 0 0 1 4 11.5z"/><path d="M17 9h.5A2.5 2.5 0 0 1 20 11.5v4a2.5 2.5 0 0 1-1 2V20l-3-2h-4a2.5 2.5 0 0 1-2.2-1.3"/></symbol>
-    <symbol id="i-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5a1.5 1.5 0 0 0 1.5-1.5z"/><path d="M12 4v16"/></symbol>
   </svg>
 
   <header class="topnav">
     <div class="wrap">
       <a class="brand" href="#/" aria-label="MRM 2026 home">
-        <span class="brand-mark"><svg><use href="#i-mark"/></svg></span>
         <span class="brand-name">MRM <span>2026</span></span>
       </a>
-      <nav class="navlinks glass" aria-label="Secondary">
+      <nav class="navlinks" aria-label="Secondary">
         <a href="#/about" data-nav="about">About</a>
       </nav>
     </div>
