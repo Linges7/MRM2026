@@ -121,8 +121,11 @@
       opacity: var(--nav-o, 0); transition: opacity .2s ease; }
     .topnav .wrap { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; }
     .brand { display: inline-flex; align-items: center; gap: 12px; }
-    .brand-name { font-family: var(--font-display); font-size: 14px; letter-spacing: .22em; font-weight: 500; }
-    .brand-name span { font-weight: 300; color: var(--ink-3); }
+    .brand-logo { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center;
+      background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--shadow-sm), var(--highlight);
+      transition: transform .2s var(--ease), box-shadow .2s; }
+    .brand:hover .brand-logo { transform: translateY(-1px); box-shadow: var(--shadow), var(--highlight); }
+    .brand-logo svg { width: 36px; height: 36px; }
     .navlinks { display: flex; gap: 4px; }
     .navlinks a { font-family: var(--font-display); font-size: 13px; font-weight: 400; letter-spacing: .04em; color: var(--ink-2);
       padding: 8px 4px; transition: color .2s; }
@@ -407,7 +410,6 @@
       .tiles { grid-template-columns: 1fr; }
       .navlinks { display: none; }
       .menu-btn { display: inline-grid; place-items: center; order: -1; }
-      .brand-name { display: none; }
       .tile { padding: 24px; border-radius: var(--r-lg); }
       .tile h2 { font-size: 28px; }
       .tile p { min-height: 0; }
@@ -456,7 +458,15 @@
   <header class="topnav">
     <div class="wrap">
       <a class="brand" href="#/" aria-label="MRM 2026 home">
-        <span class="brand-name">MRM <span>2026</span></span>
+        <span class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <g stroke="#15203B" stroke-width="5">
+              <path d="M37 21 L29 36"/><path d="M35 25 L43 31 L48 25"/><path d="M33 26 L25 27 L22 35"/><path d="M29 36 L40 42 L38 54"/>
+            </g>
+            <circle cx="40" cy="14" r="5.2" fill="#15203B" stroke="none"/>
+            <g stroke="#138A55"><path d="M29 36 L22 45" stroke-width="5"/><path d="M22 45 C26 52 20 58 10 56" stroke-width="4.2"/></g>
+          </svg>
+        </span>
       </a>
       <nav class="navlinks" aria-label="Secondary">
         <a href="#/about" data-nav="about">About</a>
