@@ -1,7 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <g stroke="#15203B" stroke-width="5">
+  <style>
+    .f { stroke: #15203B; }
+    .h { fill: #15203B; stroke: none; }
+    .b { stroke: #138A55; }
+    @media (prefers-color-scheme: dark) {
+      .f { stroke: #fff; }
+      .h { fill: #fff; }
+      .b { stroke: #3DDC97; }
+    }
+  </style>
+  <g class="f" stroke-width="5">
     <path d="M37 21 L29 36"/><path d="M35 25 L43 31 L48 25"/><path d="M33 26 L25 27 L22 35"/><path d="M29 36 L40 42 L38 54"/>
   </g>
-  <circle cx="40" cy="14" r="5.2" fill="#15203B" stroke="none"/>
-  <g stroke="#138A55"><path d="M29 36 L22 45" stroke-width="5"/><path d="M22 45 C26 52 20 58 10 56" stroke-width="4.2"/></g>
+  <circle class="h" cx="40" cy="14" r="5.2"/>
+  <g class="b"><path d="M29 36 L22 45" stroke-width="5"/><path d="M22 45 C26 52 20 58 10 56" stroke-width="4.2"/></g>
 </svg>
